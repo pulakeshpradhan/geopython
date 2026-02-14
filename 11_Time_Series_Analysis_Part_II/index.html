@@ -12,7 +12,7 @@
         <link rel="prev" href="../10_Time_Series_Analysis_Part_I/">
       
       
-        <link rel="next" href="../Data_Visualization_using_Python/">
+        <link rel="next" href="../07_Geospatial_Analysis_Vector_Data/">
       
       
         
@@ -28,6 +28,9 @@
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,7 +58,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -64,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lecture-slides" class="md-skip">
+        <a href="#lecture-slides-notes" class="md-skip">
           Skip to content
         </a>
       
@@ -76,9 +86,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="GeoPython Tutorial" class="md-header__button md-logo" aria-label="GeoPython Tutorial" data-md-component="logo">
       
@@ -106,6 +114,24 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -162,6 +188,116 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01_Basic_Data_types/" class="md-tabs__link">
+          
+  
+  
+  Python Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../09_Working_with_Numpy/" class="md-tabs__link">
+          
+  
+  
+  Data Science Core
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../10_Time_Series_Analysis_Part_I/" class="md-tabs__link">
+          
+  
+  
+  Time Series Analysis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-tabs__link">
+          
+  
+  
+  Geospatial Analysis & Cloud
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -175,8 +311,12 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="GeoPython Tutorial" class="md-nav__button md-logo" aria-label="GeoPython Tutorial" data-md-component="logo">
       
@@ -222,6 +362,58 @@
   
   
   
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../01_Basic_Data_types/" class="md-nav__link">
         
@@ -242,9 +434,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -269,9 +462,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -296,9 +490,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -323,30 +518,11 @@
     </li>
   
 
-    
+              
+            
+          </ul>
+        </nav>
       
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../05_Working_with_Pandas_Part_I/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    05 Working with Pandas Part I
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -357,15 +533,31 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../06_Working_with_Pandas_Part_II/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
     
   
-    06 Working with Pandas Part II
+    Data Science Core
   
 
     
@@ -373,40 +565,22 @@
   
   
 
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-nav__link">
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
   
-  
-  <span class="md-ellipsis">
-    
-  
-    07 Geospatial Analysis Vector Data
-  
-
-    
-  </span>
-  
+    Data Science Core
   
 
-      </a>
-    </li>
-  
-
-    
-      
-      
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -431,9 +605,186 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_Working_with_Pandas_Part_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 Working with Pandas Part I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_Working_with_Pandas_Part_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 Working with Pandas Part II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Visualization_using_Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization using Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web_Scraping_web_Table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Scraping web Table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Series Analysis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Time Series Analysis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -458,9 +809,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
     
@@ -522,143 +874,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lecture-slides" class="md-nav__link">
+  <a href="#lecture-slides-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lecture Slides
+        Lecture Slides &amp; Notes
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lecture-slides_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lecture Slides
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lecture-slides_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lecture Slides
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lecture-slides-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lecture Slides Reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Lecture Slides Reference">
+    <nav class="md-nav" aria-label="Lecture Slides &amp; Notes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#extracted-slide-content" class="md-nav__link">
+  <a href="#searchable-slide-text" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extracted Slide Content
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 1
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 2
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 3
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 4
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 5
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 6
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 7
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 8
+        Searchable Slide Text
       
     </span>
   </a>
@@ -677,6 +908,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -684,15 +923,67 @@
   
   
   
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geospatial Analysis & Cloud
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Geospatial Analysis & Cloud
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../Data_Visualization_using_Python/" class="md-nav__link">
+      <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data Visualization using Python
+    07 Geospatial Analysis Vector Data
   
 
     
@@ -704,9 +995,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -731,36 +1023,10 @@
     </li>
   
 
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../NWA_Cloud_based_Geospatial_data_processing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NWA Cloud based Geospatial data processing
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -785,9 +1051,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -812,9 +1079,38 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NWA_Cloud_based_Geospatial_data_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
-      
-      
+  
+    NWA Cloud based Geospatial data processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
@@ -839,30 +1135,11 @@
     </li>
   
 
-    
+              
+            
+          </ul>
+        </nav>
       
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Web_Scraping_web_Table/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Web Scraping web Table
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -873,179 +1150,6 @@
                 </div>
               </div>
             
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#lecture-slides" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lecture Slides
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lecture-slides_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lecture Slides
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lecture-slides_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lecture Slides
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lecture-slides-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lecture Slides Reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Lecture Slides Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#extracted-slide-content" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Extracted Slide Content
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 1
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 2
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 3
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 4
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 5
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 6
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 7
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 8
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
             
           
           
@@ -1059,16 +1163,16 @@
 
   <h1>11 Time Series Analysis Part II</h1>
 
-<pre><code class="language-python"># For detailed script Please visit  https://github.com/sukantjain/Python/blob/main/NetCDF_to_CSV.ipynb
-</code></pre>
-<pre><code class="language-python">import xarray
-import pandas as pd
-import numpy as np
-</code></pre>
-<pre><code class="language-python">netcdf1 = xarray.open_dataset(r'D:\NIH\Training\Python for water\NWA\data\IMD\RF25_ind2020_rfp25.nc')
+<div class="highlight"><pre><span></span><code><span class="c1"># For detailed script Please visit  https://github.com/sukantjain/Python/blob/main/NetCDF_to_CSV.ipynb</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">netcdf1</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;D:\NIH\Training\Python for water\NWA\data\IMD\RF25_ind2020_rfp25.nc&#39;</span><span class="p">)</span>
 
-netcdf1
-</code></pre>
+<span class="n">netcdf1</span>
+</code></pre></div>
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewBox="0 0 32 32">
@@ -1486,33 +1590,32 @@ Attributes:
                &#x27;2020-12-30&#x27;, &#x27;2020-12-31&#x27;],
               dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;TIME&#x27;, length=366, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b02c51f5-68b2-4581-a093-02b4af4451cd' class='xr-section-summary-in' type='checkbox'  checked><label for='section-b02c51f5-68b2-4581-a093-02b4af4451cd' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>history :</span></dt><dd>FERRET V7.5 (optimized) 20-Jan-23</dd><dt><span>Conventions :</span></dt><dd>CF-1.6</dd></dl></div></li></ul></div></div>
 
-<pre><code class="language-python">arr_lat = np.array(netcdf1['LATITUDE'])
-arr_lon = np.array(netcdf1['LONGITUDE'])
-arr_time = np.array(netcdf1['TIME'])
+<div class="highlight"><pre><span></span><code><span class="n">arr_lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">netcdf1</span><span class="p">[</span><span class="s1">&#39;LATITUDE&#39;</span><span class="p">])</span>
+<span class="n">arr_lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">netcdf1</span><span class="p">[</span><span class="s1">&#39;LONGITUDE&#39;</span><span class="p">])</span>
+<span class="n">arr_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">netcdf1</span><span class="p">[</span><span class="s1">&#39;TIME&#39;</span><span class="p">])</span>
 
-var_arr = netcdf1['RAINFALL']
-var_arr[-1,:,:].plot()
-
-</code></pre>
+<span class="n">var_arr</span> <span class="o">=</span> <span class="n">netcdf1</span><span class="p">[</span><span class="s1">&#39;RAINFALL&#39;</span><span class="p">]</span>
+<span class="n">var_arr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,:]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</code></pre></div>
 <pre><code>&lt;matplotlib.collections.QuadMesh at 0x21ddc1deae0&gt;
 </code></pre>
 <p><img alt="png" src="../11_Time_Series_Analysis_Part_II_files/11_Time_Series_Analysis_Part_II_3_1.png" /></p>
-<pre><code class="language-python">user_lat = 23.21
-user_lon = 77.40
+<div class="highlight"><pre><span></span><code><span class="n">user_lat</span> <span class="o">=</span> <span class="mf">23.21</span>
+<span class="n">user_lon</span> <span class="o">=</span> <span class="mf">77.40</span>
 
-closest_index_lat = np.argmin(np.abs(arr_lat-user_lat))
-closest_index_lon = np.argmin(np.abs(arr_lon-user_lon))
+<span class="n">closest_index_lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">arr_lat</span><span class="o">-</span><span class="n">user_lat</span><span class="p">))</span>
+<span class="n">closest_index_lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">arr_lon</span><span class="o">-</span><span class="n">user_lon</span><span class="p">))</span>
 
-closest_lat = arr_lat[closest_index_lat]
-closest_lon = arr_lon[closest_index_lon]
+<span class="n">closest_lat</span> <span class="o">=</span> <span class="n">arr_lat</span><span class="p">[</span><span class="n">closest_index_lat</span><span class="p">]</span>
+<span class="n">closest_lon</span> <span class="o">=</span> <span class="n">arr_lon</span><span class="p">[</span><span class="n">closest_index_lon</span><span class="p">]</span>
 
-name = str(closest_lat) + &quot;_&quot; + str(closest_lon)
+<span class="n">name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">closest_lat</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">closest_lon</span><span class="p">)</span>
 
-arr_loc = var_arr[:,closest_index_lat,closest_index_lon]
-df = pd.DataFrame({name:arr_loc}, index=arr_time)
+<span class="n">arr_loc</span> <span class="o">=</span> <span class="n">var_arr</span><span class="p">[:,</span><span class="n">closest_index_lat</span><span class="p">,</span><span class="n">closest_index_lon</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">name</span><span class="p">:</span><span class="n">arr_loc</span><span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="n">arr_time</span><span class="p">)</span>
 
-df
-</code></pre>
+<span class="n">df</span>
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1586,121 +1689,115 @@ df
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-KF71FwBA1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<h2 id="lecture-slides">Lecture Slides</h2>
-<p><a href="../pdfs/Time%20Series%20in%20Python.pdf">Download Time Series in Python.pdf</a></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-KF71FwBA1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<h2 id="lecture-slides_1">Lecture Slides</h2>
-<p><a href="../pdfs/Time%20Series%20in%20Python.pdf">Download Time Series in Python.pdf</a></p>
-<h2 id="lecture-slides_2">Lecture Slides</h2>
-<p><a href="../pdfs/Time%20Series%20in%20Python.pdf">Download Time Series in Python.pdf</a></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-KF71FwBA1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-KF71FwBA1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<h2 id="lecture-slides-reference">Lecture Slides Reference</h2>
-<p><a href="../pdfs/Time%20Series%20in%20Python.pdf">Download Slides PDF</a>{ .md-button }</p>
-<h3 id="extracted-slide-content">Extracted Slide Content</h3>
-<p>!!! note "Note: Text automatically extracted from slides"
-    The following text is extracted from the presentation slides and may require formatting adjustments.</p>
-<h3 id="slide-1">Slide 1</h3>
-<p>Time Series Analysis 
-using Python
-Sukant Jain,
-Scientist C 
-National Institute of Hydrology, 
-Roorkee
-sukant.nihr@gov.in</p>
-<h3 id="slide-2">Slide 2</h3>
-<p>Gridded Format for Storing Climate Data</p>
-<h3 id="slide-3">Slide 3</h3>
-<p>What is Gridded Data?
-Definition
-Gridded data organizes 
-spatial and temporal 
-information into a 
-structured grid, where 
-each cell represents a 
-specific location or time 
-interval.
-Structure
-Each cell in the grid 
-contains data values 
-such as temperature, 
-precipitation, or wind 
-speed, providing a 
-comprehensive 
-representation of 
-environmental 
-conditions.
-Applications
-Gridded data is widely 
-used in climate 
-modeling, weather 
-forecasting, and 
-environmental 
-monitoring, providing 
-valuable insights into 
-climate change and its 
-impacts.</p>
-<h3 id="slide-4">Slide 4</h3>
-<p>What is Gridded Data?</p>
-<h3 id="slide-5">Slide 5</h3>
-<p>Efficiency of Gridded Data Storage
-CSV Files
-CSV files are simple and easy to use, but they suffer from data redundancy, 
-large file sizes, and slow access times, making them inefficient for storing 
-large datasets.
-Gridded Data Formats
-Gridded data formats are designed for efficient storage, reducing redundancy 
-and enabling faster access times. They are well-suited for handling massive 
-datasets.
-Advantages
-Gridded data formats provide improved data organization, efficient storage, 
-reduced redundancy, and enhanced accessibility, making them ideal for large-
-scale climate data analysis.
-Disadvantages
-Specialized software is required to access and manipulate data in gridded 
-formats, necessitating specific skills and tools for efficient utilization.</p>
-<h3 id="slide-6">Slide 6</h3>
-<p>Different Formats of Gridded Data
-• NetCDF (Network Common Data Form) is widely used in climate and meteorological 
-data, supporting large, multi-dimensional arrays of data.
-• HDF5 (Hierarchical Data Format) is a flexible and self-describing format that is well-
-suited for storing complex data hierarchies.
-• GRIB (GRIdded Binary) is a widely used format for storing meteorological data. It is 
-standardized by the WMO
-• GeoTIFF (Geographic Tagged Image File Format) is a standard format for storing 
-georeferenced raster data. It supports a wide range of spatial data types, including 
-elevation, land cover, and precipitation.</p>
-<h3 id="slide-7">Slide 7</h3>
-<p>Tools for Extracting Data from Gridded Formats
-Type Tools Description
-Python Libraries netCDF4, h5py, xarray Python libraries provide functionalities for reading 
-and writing NetCDF, HDF5, and other gridded data 
-formats.
-Command Line Tools ncdump, h5dump, 
-cdo
-Command line tools offer efficient ways to extract 
-data from gridded formats, convert data between 
-formats, and perform basic data manipulations.
-Software Applications Panoply, ArcGIS, QGIS Specialized software applications provide interactive 
-environments for visualizing, analyzing, and 
-manipulating gridded data.
-Cloud Computing 
-Platform
-Google Earth Engine Very easy to play around the gridded data hosted in 
-that platform</p>
-<h3 id="slide-8">Slide 8</h3>
-<p>PYTHON PACKAGE 
-A Python package or module is a collection of Python code, such as functions and classes, organized to perform 
-specific tasks or solve problems efficiently.
-• xarray: Provides data structures for multi-dimensional arrays, enabling efficient manipulation and analysis of 
-labeled data.
-• pandas: Offers powerful data structures like DataFrames for data manipulation and analysis, making it a staple 
-for data science.
-• numpy: Provides support for large, multi-dimensional arrays and matrices, along with a collection of 
-mathematical functions to operate on them.</p>
+<h2 id="lecture-slides-notes">Lecture Slides &amp; Notes</h2>
+<p><embed src="pdfs/Time Series in Python.pdf" type="application/pdf" width="100%" height="600px" /></p>
+<p><a href="../pdfs/Time%20Series%20in%20Python.pdf">Download Slides PDF</a>{ .md-button .md-button--primary }</p>
+<h3 id="searchable-slide-text">Searchable Slide Text</h3>
+<div class="admonition example">
+<p class="admonition-title">Extracted Data</p>
+<p>The following text is automatically extracted from the slides to facilitate searching.</p>
+<div style='max-height: 300px; overflow-y: auto; font-size: 0.9em; border: 1px solid #ddd; padding: 10px; border-radius: 4px;'>
+</div>
+<p><strong>Slide 1</strong>  </p>
+<p>Time Series Analysis <br />
+using Python<br />
+Sukant Jain,<br />
+Scientist C <br />
+National Institute of Hydrology, <br />
+Roorkee<br />
+sukant.nihr@gov.in  </p>
+<p><strong>Slide 2</strong>  </p>
+<p>Gridded Format for Storing Climate Data  </p>
+<p><strong>Slide 3</strong>  </p>
+<p>What is Gridded Data?<br />
+Definition<br />
+Gridded data organizes <br />
+spatial and temporal <br />
+information into a <br />
+structured grid, where <br />
+each cell represents a <br />
+specific location or time <br />
+interval.<br />
+Structure<br />
+Each cell in the grid <br />
+contains data values <br />
+such as temperature, <br />
+precipitation, or wind <br />
+speed, providing a <br />
+comprehensive <br />
+representation of <br />
+environmental <br />
+conditions.<br />
+Applications<br />
+Gridded data is widely <br />
+used in climate <br />
+modeling, weather <br />
+forecasting, and <br />
+environmental <br />
+monitoring, providing <br />
+valuable insights into <br />
+climate change and its <br />
+impacts.  </p>
+<p><strong>Slide 4</strong>  </p>
+<p>What is Gridded Data?  </p>
+<p><strong>Slide 5</strong>  </p>
+<p>Efficiency of Gridded Data Storage<br />
+CSV Files<br />
+CSV files are simple and easy to use, but they suffer from data redundancy, <br />
+large file sizes, and slow access times, making them inefficient for storing <br />
+large datasets.<br />
+Gridded Data Formats<br />
+Gridded data formats are designed for efficient storage, reducing redundancy <br />
+and enabling faster access times. They are well-suited for handling massive <br />
+datasets.<br />
+Advantages<br />
+Gridded data formats provide improved data organization, efficient storage, <br />
+reduced redundancy, and enhanced accessibility, making them ideal for large-<br />
+scale climate data analysis.<br />
+Disadvantages<br />
+Specialized software is required to access and manipulate data in gridded <br />
+formats, necessitating specific skills and tools for efficient utilization.  </p>
+<p><strong>Slide 6</strong>  </p>
+<p>Different Formats of Gridded Data<br />
+• NetCDF (Network Common Data Form) is widely used in climate and meteorological <br />
+data, supporting large, multi-dimensional arrays of data.<br />
+• HDF5 (Hierarchical Data Format) is a flexible and self-describing format that is well-<br />
+suited for storing complex data hierarchies.<br />
+• GRIB (GRIdded Binary) is a widely used format for storing meteorological data. It is <br />
+standardized by the WMO<br />
+• GeoTIFF (Geographic Tagged Image File Format) is a standard format for storing <br />
+georeferenced raster data. It supports a wide range of spatial data types, including <br />
+elevation, land cover, and precipitation.  </p>
+<p><strong>Slide 7</strong>  </p>
+<p>Tools for Extracting Data from Gridded Formats<br />
+Type Tools Description<br />
+Python Libraries netCDF4, h5py, xarray Python libraries provide functionalities for reading <br />
+and writing NetCDF, HDF5, and other gridded data <br />
+formats.<br />
+Command Line Tools ncdump, h5dump, <br />
+cdo<br />
+Command line tools offer efficient ways to extract <br />
+data from gridded formats, convert data between <br />
+formats, and perform basic data manipulations.<br />
+Software Applications Panoply, ArcGIS, QGIS Specialized software applications provide interactive <br />
+environments for visualizing, analyzing, and <br />
+manipulating gridded data.<br />
+Cloud Computing <br />
+Platform<br />
+Google Earth Engine Very easy to play around the gridded data hosted in <br />
+that platform  </p>
+<p><strong>Slide 8</strong>  </p>
+<p>PYTHON PACKAGE <br />
+A Python package or module is a collection of Python code, such as functions and classes, organized to perform <br />
+specific tasks or solve problems efficiently.<br />
+• xarray: Provides data structures for multi-dimensional arrays, enabling efficient manipulation and analysis of <br />
+labeled data.<br />
+• pandas: Offers powerful data structures like DataFrames for data manipulation and analysis, making it a staple <br />
+for data science.<br />
+• numpy: Provides support for large, multi-dimensional arrays and matrices, along with a collection of <br />
+mathematical functions to operate on them.  </p>
+<pre><code>&lt;/div&gt;
+</code></pre>
 
 
 
@@ -1750,7 +1847,7 @@ mathematical functions to operate on them.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>

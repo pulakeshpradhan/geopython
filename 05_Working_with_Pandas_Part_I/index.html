@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../04_OOP_Error_and_File_handling/">
+        <link rel="prev" href="../09_Working_with_Numpy/">
       
       
         <link rel="next" href="../06_Working_with_Pandas_Part_II/">
@@ -28,6 +28,9 @@
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,7 +58,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -76,9 +86,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="GeoPython Tutorial" class="md-header__button md-logo" aria-label="GeoPython Tutorial" data-md-component="logo">
       
@@ -106,6 +114,24 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -162,6 +188,116 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01_Basic_Data_types/" class="md-tabs__link">
+          
+  
+  
+  Python Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../09_Working_with_Numpy/" class="md-tabs__link">
+          
+  
+  
+  Data Science Core
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../10_Time_Series_Analysis_Part_I/" class="md-tabs__link">
+          
+  
+  
+  Time Series Analysis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-tabs__link">
+          
+  
+  
+  Geospatial Analysis & Cloud
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -175,8 +311,12 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="GeoPython Tutorial" class="md-nav__button md-logo" aria-label="GeoPython Tutorial" data-md-component="logo">
       
@@ -222,6 +362,58 @@
   
   
   
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../01_Basic_Data_types/" class="md-nav__link">
         
@@ -242,9 +434,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -269,9 +462,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -296,9 +490,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -323,9 +518,102 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Science Core
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Science Core
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_Working_with_Numpy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 Working with Numpy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
     
@@ -409,33 +697,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lecture-slides-reference" class="md-nav__link">
+  <a href="#lecture-slides-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lecture Slides Reference
+        Lecture Slides &amp; Notes
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Lecture Slides Reference">
+    <nav class="md-nav" aria-label="Lecture Slides &amp; Notes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#extracted-slide-content" class="md-nav__link">
+  <a href="#searchable-slide-text" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extracted Slide Content
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 1
+        Searchable Slide Text
       
     </span>
   </a>
@@ -456,45 +733,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Working with Pandas">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#slide-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 2
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 3
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 4
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -504,9 +742,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -531,117 +770,10 @@
     </li>
   
 
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    07 Geospatial Analysis Vector Data
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../09_Working_with_Numpy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    09 Working with Numpy
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../10_Time_Series_Analysis_Part_I/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    10 Time Series Analysis Part I
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../11_Time_Series_Analysis_Part_II/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    11 Time Series Analysis Part II
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -666,144 +798,10 @@
     </li>
   
 
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Geospatial_Analysis_Working_with_Raster_Data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Geospatial Analysis Working with Raster Data
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../NWA_Cloud_based_Geospatial_data_processing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NWA Cloud based Geospatial data processing
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../OpenWeatherMapAPI/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    OpenWeatherMapAPI
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Open_Meteo_WEB_API/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Open Meteo WEB API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Prediction/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prediction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -828,6 +826,356 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time Series Analysis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Time Series Analysis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_Time_Series_Analysis_Part_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Time Series Analysis Part I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_Time_Series_Analysis_Part_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Time Series Analysis Part II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geospatial Analysis & Cloud
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Geospatial Analysis & Cloud
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 Geospatial Analysis Vector Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Geospatial_Analysis_Working_with_Raster_Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geospatial Analysis Working with Raster Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenWeatherMapAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWeatherMapAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Open_Meteo_WEB_API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Meteo WEB API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NWA_Cloud_based_Geospatial_data_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NWA Cloud based Geospatial data processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prediction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
   </ul>
 </nav>
@@ -835,141 +1183,6 @@
                 </div>
               </div>
             
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#importing-modulespackages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Importing Modules/Packages
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creation-of-dataframeseries-from-scratch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Creation of DataFrame/Series from scratch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lecture-slides-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lecture Slides Reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Lecture Slides Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#extracted-slide-content" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Extracted Slide Content
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 1
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#working-with-pandas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Working with Pandas
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Working with Pandas">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#slide-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 2
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 3
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slide-4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slide 4
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
             
           
           
@@ -984,9 +1197,9 @@
   <h1>05 Working with Pandas Part I</h1>
 
 <h2 id="importing-modulespackages">Importing Modules/Packages</h2>
-<pre><code class="language-python">#Error due to use of sqrt() method of math module without importing the module
-sqrt(16)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#Error due to use of sqrt() method of math module without importing the module</span>
+<span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+</code></pre></div>
 <pre><code>---------------------------------------------------------------------------
 
 NameError                                 Traceback (most recent call last)
@@ -997,35 +1210,35 @@ NameError                                 Traceback (most recent call last)
 
 NameError: name 'sqrt' is not defined
 </code></pre>
-<pre><code class="language-python">import math
-</code></pre>
-<pre><code class="language-python">math.sqrt(16)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+</code></pre></div>
 <pre><code>4.0
 </code></pre>
-<pre><code class="language-python">#import pandas package by renaming it
-import pandas as pd
-</code></pre>
-<pre><code class="language-python">#importing specific function/method instead of whole module
-from math import sqrt
-</code></pre>
-<pre><code class="language-python">sqrt(4)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#import pandas package by renaming it</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">#importing specific function/method instead of whole module</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
 <pre><code>2.0
 </code></pre>
-<pre><code class="language-python">#import of submodule inside a module after renaming it
-import matplotlib.pyplot as plt
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#import of submodule inside a module after renaming it</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</code></pre></div>
 <h2 id="creation-of-dataframeseries-from-scratch">Creation of DataFrame/Series from scratch</h2>
-<pre><code class="language-python">#Creation of Pandas Series by passing a list of values
-dams = pd.Series(['Bhakra','Almatti','Indira Sagar','Hirakud','Mettur','Tehri'],name=&quot;Dams&quot;)
-</code></pre>
-<pre><code class="language-python">type(dams)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#Creation of Pandas Series by passing a list of values</span>
+<span class="n">dams</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;Bhakra&#39;</span><span class="p">,</span><span class="s1">&#39;Almatti&#39;</span><span class="p">,</span><span class="s1">&#39;Indira Sagar&#39;</span><span class="p">,</span><span class="s1">&#39;Hirakud&#39;</span><span class="p">,</span><span class="s1">&#39;Mettur&#39;</span><span class="p">,</span><span class="s1">&#39;Tehri&#39;</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Dams&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">type</span><span class="p">(</span><span class="n">dams</span><span class="p">)</span>
+</code></pre></div>
 <pre><code>pandas.core.series.Series
 </code></pre>
-<pre><code class="language-python">dams
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">dams</span>
+</code></pre></div>
 <pre><code>0          Bhakra
 1         Almatti
 2    Indira Sagar
@@ -1034,10 +1247,10 @@ dams = pd.Series(['Bhakra','Almatti','Indira Sagar','Hirakud','Mettur','Tehri'],
 5           Tehri
 Name: Dams, dtype: object
 </code></pre>
-<pre><code class="language-python">river = pd.Series(['Sutlej','Krishna','Narmada','Mahanadi','Cauvery','Bhagirathi'],name=&quot;River&quot;)
-</code></pre>
-<pre><code class="language-python">river
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">river</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;Sutlej&#39;</span><span class="p">,</span><span class="s1">&#39;Krishna&#39;</span><span class="p">,</span><span class="s1">&#39;Narmada&#39;</span><span class="p">,</span><span class="s1">&#39;Mahanadi&#39;</span><span class="p">,</span><span class="s1">&#39;Cauvery&#39;</span><span class="p">,</span><span class="s1">&#39;Bhagirathi&#39;</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;River&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">river</span>
+</code></pre></div>
 <pre><code>0        Sutlej
 1       Krishna
 2       Narmada
@@ -1046,12 +1259,12 @@ Name: Dams, dtype: object
 5    Bhagirathi
 Name: River, dtype: object
 </code></pre>
-<pre><code class="language-python">state = pd.Series(['HP','Karnataka','MP','Odisha','Tamil Nadu','Uttarakhand'],name='State')
-</code></pre>
-<pre><code class="language-python">year_of_completion = pd.Series([1963,2000,2006,1956,1934,2006],name='Year')
-</code></pre>
-<pre><code class="language-python">year_of_completion
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">state</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;HP&#39;</span><span class="p">,</span><span class="s1">&#39;Karnataka&#39;</span><span class="p">,</span><span class="s1">&#39;MP&#39;</span><span class="p">,</span><span class="s1">&#39;Odisha&#39;</span><span class="p">,</span><span class="s1">&#39;Tamil Nadu&#39;</span><span class="p">,</span><span class="s1">&#39;Uttarakhand&#39;</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;State&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">year_of_completion</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1963</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2006</span><span class="p">,</span><span class="mi">1956</span><span class="p">,</span><span class="mi">1934</span><span class="p">,</span><span class="mi">2006</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">year_of_completion</span>
+</code></pre></div>
 <pre><code>0    1963
 1    2000
 2    2006
@@ -1060,10 +1273,10 @@ Name: River, dtype: object
 5    2006
 Name: Year, dtype: int64
 </code></pre>
-<pre><code class="language-python">height_of_dam = pd.Series([225.5,49.3,91.4,60.9,70.4,260.5],name=&quot;Height&quot;)
-</code></pre>
-<pre><code class="language-python">height_of_dam
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">height_of_dam</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">225.5</span><span class="p">,</span><span class="mf">49.3</span><span class="p">,</span><span class="mf">91.4</span><span class="p">,</span><span class="mf">60.9</span><span class="p">,</span><span class="mf">70.4</span><span class="p">,</span><span class="mf">260.5</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Height&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">height_of_dam</span>
+</code></pre></div>
 <pre><code>0    225.5
 1     49.3
 2     91.4
@@ -1072,15 +1285,15 @@ Name: Year, dtype: int64
 5    260.5
 Name: Height, dtype: float64
 </code></pre>
-<pre><code class="language-python">#creation of empty Pandas Dataframe
-Dam_Register = pd.DataFrame()
-</code></pre>
-<pre><code class="language-python">type(Dam_Register)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#creation of empty Pandas Dataframe</span>
+<span class="n">Dam_Register</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">type</span><span class="p">(</span><span class="n">Dam_Register</span><span class="p">)</span>
+</code></pre></div>
 <pre><code>pandas.core.frame.DataFrame
 </code></pre>
-<pre><code class="language-python">Dam_Register
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Dam_Register</span>
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1106,11 +1319,11 @@ Dam_Register = pd.DataFrame()
 </table>
 </div>
 
-<pre><code class="language-python">#creation of a dictionary with intended column headers as keys and Pandas Series as values 
-dictionary1 = {&quot;Dams&quot;:dams,&quot;River&quot;:river,&quot;State&quot;:state,&quot;Year&quot;:year_of_completion,&quot;Height(m)&quot;:height_of_dam}
-</code></pre>
-<pre><code class="language-python">dictionary1
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#creation of a dictionary with intended column headers as keys and Pandas Series as values </span>
+<span class="n">dictionary1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Dams&quot;</span><span class="p">:</span><span class="n">dams</span><span class="p">,</span><span class="s2">&quot;River&quot;</span><span class="p">:</span><span class="n">river</span><span class="p">,</span><span class="s2">&quot;State&quot;</span><span class="p">:</span><span class="n">state</span><span class="p">,</span><span class="s2">&quot;Year&quot;</span><span class="p">:</span><span class="n">year_of_completion</span><span class="p">,</span><span class="s2">&quot;Height(m)&quot;</span><span class="p">:</span><span class="n">height_of_dam</span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">dictionary1</span>
+</code></pre></div>
 <pre><code>{'Dams': 0          Bhakra
  1         Almatti
  2    Indira Sagar
@@ -1147,11 +1360,11 @@ dictionary1 = {&quot;Dams&quot;:dams,&quot;River&quot;:river,&quot;State&quot;:s
  5    260.5
  Name: Height, dtype: float64}
 </code></pre>
-<pre><code class="language-python">#creation of Pandas DataFrame by passing a dictionary of Pandas Series 
-Dam_Register = pd.DataFrame(dictionary1)
-</code></pre>
-<pre><code class="language-python">Dam_Register
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#creation of Pandas DataFrame by passing a dictionary of Pandas Series </span>
+<span class="n">Dam_Register</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dictionary1</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">Dam_Register</span>
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1230,13 +1443,13 @@ Dam_Register = pd.DataFrame(dictionary1)
 </table>
 </div>
 
-<pre><code class="language-python">type(Dam_Register)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">type</span><span class="p">(</span><span class="n">Dam_Register</span><span class="p">)</span>
+</code></pre></div>
 <pre><code>pandas.core.frame.DataFrame
 </code></pre>
-<pre><code class="language-python">#describe() method for printing basic statistics of numerical data contained in the Pandas DataFrame
-Dam_Register.describe()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#describe() method for printing basic statistics of numerical data contained in the Pandas DataFrame</span>
+<span class="n">Dam_Register</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1304,19 +1517,19 @@ Dam_Register.describe()
 </table>
 </div>
 
-<pre><code class="language-python">#printing columns attribute of Pandas DataFrame 
-Dam_Register.columns
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#printing columns attribute of Pandas DataFrame </span>
+<span class="n">Dam_Register</span><span class="o">.</span><span class="n">columns</span>
+</code></pre></div>
 <pre><code>Index(['Dams', 'River', 'State', 'Year', 'Height(m)'], dtype='object')
 </code></pre>
-<pre><code class="language-python">#printing index attribute of Pandas Dataframe
-Dam_Register.index
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#printing index attribute of Pandas Dataframe</span>
+<span class="n">Dam_Register</span><span class="o">.</span><span class="n">index</span>
+</code></pre></div>
 <pre><code>RangeIndex(start=0, stop=6, step=1)
 </code></pre>
-<pre><code class="language-python">#By default head() method prints first 5 rows of Pandas DataFrame 
-Dam_Register.head()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#By default head() method prints first 5 rows of Pandas DataFrame </span>
+<span class="n">Dam_Register</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1387,9 +1600,9 @@ Dam_Register.head()
 </table>
 </div>
 
-<pre><code class="language-python">#head() method with parameter passed into it prints same number of header rows of the Pandas DataFrame 
-Dam_Register.head(4)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#head() method with parameter passed into it prints same number of header rows of the Pandas DataFrame </span>
+<span class="n">Dam_Register</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1452,9 +1665,9 @@ Dam_Register.head(4)
 </table>
 </div>
 
-<pre><code class="language-python">#tail() method with parameter passed into it prints same number of tail rows of the Pandas DataFrame
-Dam_Register.tail(1)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#tail() method with parameter passed into it prints same number of tail rows of the Pandas DataFrame</span>
+<span class="n">Dam_Register</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1493,9 +1706,9 @@ Dam_Register.tail(1)
 </table>
 </div>
 
-<pre><code class="language-python">#info() method prints basic information about the Pandas DataFrame
-Dam_Register.info()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#info() method prints basic information about the Pandas DataFrame</span>
+<span class="n">Dam_Register</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</code></pre></div>
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 6 entries, 0 to 5
 Data columns (total 5 columns):
@@ -1509,29 +1722,29 @@ Data columns (total 5 columns):
 dtypes: float64(1), int64(1), object(3)
 memory usage: 368.0+ bytes
 </code></pre>
-<pre><code class="language-python">#Import of modules for file path handling
-import pathlib
-import os
-home = pathlib.Path.home()
-home
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#Import of modules for file path handling</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="n">home</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span>
+<span class="n">home</span>
+</code></pre></div>
 <pre><code>WindowsPath('C:/Users/COMP109')
 </code></pre>
-<pre><code class="language-python">#file path to csv file 
-fp = home / &quot;PythonWRM&quot; / &quot;Data&quot; / &quot;Gauge_Discharge_data.csv&quot;
-fp
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#file path to csv file </span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">home</span> <span class="o">/</span> <span class="s2">&quot;PythonWRM&quot;</span> <span class="o">/</span> <span class="s2">&quot;Data&quot;</span> <span class="o">/</span> <span class="s2">&quot;Gauge_Discharge_data.csv&quot;</span>
+<span class="n">fp</span>
+</code></pre></div>
 <pre><code>WindowsPath('C:/Users/COMP109/PythonWRM/Data/Gauge_Discharge_data.csv')
 </code></pre>
-<pre><code class="language-python">#Pandas provides read_*.() to read data from multiple formats
-Gauge_Discharge_data = pd.read_csv(fp)
-</code></pre>
-<pre><code class="language-python">type(Gauge_Discharge_data)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#Pandas provides read_*.() to read data from multiple formats</span>
+<span class="n">Gauge_Discharge_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">type</span><span class="p">(</span><span class="n">Gauge_Discharge_data</span><span class="p">)</span>
+</code></pre></div>
 <pre><code>pandas.core.frame.DataFrame
 </code></pre>
-<pre><code class="language-python">Gauge_Discharge_data
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">Gauge_Discharge_data</span>
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1651,8 +1864,8 @@ Gauge_Discharge_data = pd.read_csv(fp)
 <p>4017 rows × 5 columns</p>
 </div>
 
-<pre><code class="language-python">help(pd.read_csv)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">help</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">)</span>
+</code></pre></div>
 <pre><code>Help on function read_csv in module pandas.io.parsers.readers:
 
 read_csv(filepath_or_buffer: 'FilePathOrBuffer', sep=&lt;no_default&gt;, delimiter=None, header='infer', names=&lt;no_default&gt;, index_col=None, usecols=None, squeeze=False, prefix=&lt;no_default&gt;, mangle_dupe_cols=True, dtype: 'DtypeArg | None' = None, engine=None, converters=None, true_values=None, false_values=None, skipinitialspace=False, skiprows=None, skipfooter=0, nrows=None, na_values=None, keep_default_na=True, na_filter=True, verbose=False, skip_blank_lines=True, parse_dates=False, infer_datetime_format=False, keep_date_col=False, date_parser=None, dayfirst=False, cache_dates=True, iterator=False, chunksize=None, compression='infer', thousands=None, decimal: 'str' = '.', lineterminator=None, quotechar='"', quoting=0, doublequote=True, escapechar=None, comment=None, encoding=None, encoding_errors: 'str | None' = 'strict', dialect=None, error_bad_lines=None, warn_bad_lines=None, on_bad_lines=None, delim_whitespace=False, low_memory=True, memory_map=False, float_precision=None, storage_options: 'StorageOptions' = None)
@@ -1994,19 +2207,19 @@ read_csv(filepath_or_buffer: 'FilePathOrBuffer', sep=&lt;no_default&gt;, delimit
     --------
     &gt;&gt;&gt; pd.read_csv('data.csv')  # doctest: +SKIP
 </code></pre>
-<pre><code class="language-python">#built-in len() function of Python gives the number of rows in the Pandas DataFrame
-len(Gauge_Discharge_data)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#built-in len() function of Python gives the number of rows in the Pandas DataFrame</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">Gauge_Discharge_data</span><span class="p">)</span>
+</code></pre></div>
 <pre><code>4017
 </code></pre>
-<pre><code class="language-python">#shape attribute of Pandas DataFrame prints the number of rows and columns in the Panda DataFrame
-Gauge_Discharge_data.shape
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#shape attribute of Pandas DataFrame prints the number of rows and columns in the Panda DataFrame</span>
+<span class="n">Gauge_Discharge_data</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div>
 <pre><code>(4017, 5)
 </code></pre>
-<pre><code class="language-python">#printing of first 10 rows of the Pandas DataFrame
-Gauge_Discharge_data.head(10)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#printing of first 10 rows of the Pandas DataFrame</span>
+<span class="n">Gauge_Discharge_data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2117,9 +2330,9 @@ Gauge_Discharge_data.head(10)
 </table>
 </div>
 
-<pre><code class="language-python">#printing of last 10 rows of the Pandas DataFrame
-Gauge_Discharge_data.tail(10)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#printing of last 10 rows of the Pandas DataFrame</span>
+<span class="n">Gauge_Discharge_data</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2230,10 +2443,10 @@ Gauge_Discharge_data.tail(10)
 </table>
 </div>
 
-<pre><code class="language-python">#dtypes attribute prints the datatypes of all columns of Pandas DataFrame
-data_type = Gauge_Discharge_data.dtypes
-data_type
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#dtypes attribute prints the datatypes of all columns of Pandas DataFrame</span>
+<span class="n">data_type</span> <span class="o">=</span> <span class="n">Gauge_Discharge_data</span><span class="o">.</span><span class="n">dtypes</span>
+<span class="n">data_type</span>
+</code></pre></div>
 <pre><code>Day                    object
 Data Type              object
 Mean Gauge (m)        float64
@@ -2241,14 +2454,14 @@ Discharge (cumecs)    float64
 Observed/Computed      object
 dtype: object
 </code></pre>
-<pre><code class="language-python">#dtypes attribute creates a Pandas Series of data types
-type(data_type)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#dtypes attribute creates a Pandas Series of data types</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">data_type</span><span class="p">)</span>
+</code></pre></div>
 <pre><code>pandas.core.series.Series
 </code></pre>
-<pre><code class="language-python">#printing basic information about the Pandas DataFrame using info() method
-Gauge_Discharge_data.info()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#printing basic information about the Pandas DataFrame using info() method</span>
+<span class="n">Gauge_Discharge_data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</code></pre></div>
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 4017 entries, 0 to 4016
 Data columns (total 5 columns):
@@ -2262,9 +2475,9 @@ Data columns (total 5 columns):
 dtypes: float64(2), object(3)
 memory usage: 157.0+ KB
 </code></pre>
-<pre><code class="language-python">#printing basic statistics of the numerical data contained in the Pandas DataFrame
-Gauge_Discharge_data.describe()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#printing basic statistics of the numerical data contained in the Pandas DataFrame</span>
+<span class="n">Gauge_Discharge_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2332,30 +2545,30 @@ Gauge_Discharge_data.describe()
 </table>
 </div>
 
-<pre><code class="language-python">#columns attribute of Pandas DataFrame
-Gauge_Discharge_data.columns
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#columns attribute of Pandas DataFrame</span>
+<span class="n">Gauge_Discharge_data</span><span class="o">.</span><span class="n">columns</span>
+</code></pre></div>
 <pre><code>Index(['Day', 'Data Type', 'Mean Gauge (m)', 'Discharge (cumecs)',
        'Observed/Computed'],
       dtype='object')
 </code></pre>
-<pre><code class="language-python">#columns attribute creates a new Index object
-type(Gauge_Discharge_data.columns)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#columns attribute creates a new Index object</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">Gauge_Discharge_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</code></pre></div>
 <pre><code>pandas.core.indexes.base.Index
 </code></pre>
-<pre><code class="language-python">#columns.values attribute prints an array of column headers
-Gauge_Discharge_data.columns.values
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#columns.values attribute prints an array of column headers</span>
+<span class="n">Gauge_Discharge_data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span>
+</code></pre></div>
 <pre><code>array(['Day', 'Data Type', 'Mean Gauge (m)', 'Discharge (cumecs)',
        'Observed/Computed'], dtype=object)
 </code></pre>
-<pre><code class="language-python">type(Gauge_Discharge_data.columns.values)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">type</span><span class="p">(</span><span class="n">Gauge_Discharge_data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</code></pre></div>
 <pre><code>numpy.ndarray
 </code></pre>
-<pre><code class="language-python">help(Gauge_Discharge_data.to_excel)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">help</span><span class="p">(</span><span class="n">Gauge_Discharge_data</span><span class="o">.</span><span class="n">to_excel</span><span class="p">)</span>
+</code></pre></div>
 <pre><code>Help on method to_excel in module pandas.core.generic:
 
 to_excel(excel_writer, sheet_name: 'str' = 'Sheet1', na_rep: 'str' = '', float_format: 'str | None' = None, columns=None, header=True, index=True, index_label=None, startrow=0, startcol=0, engine=None, merge_cells=True, encoding=None, inf_rep='inf', verbose=True, freeze_panes=None, storage_options: 'StorageOptions' = None) -&gt; 'None' method of pandas.core.frame.DataFrame instance
@@ -2480,10 +2693,10 @@ to_excel(excel_writer, sheet_name: 'str' = 'Sheet1', na_rep: 'str' = '', float_f
 
     &gt;&gt;&gt; df1.to_excel('output1.xlsx', engine='xlsxwriter')  # doctest: +SKIP
 </code></pre>
-<pre><code class="language-python">#writing data from Pandas DataFrame into excel file use to_*() method
-# writing to excel file doesn't happen due to unavailability of openpyxl module
-Gauge_Discharge_data.to_excel('GD_data.xlsx')
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#writing data from Pandas DataFrame into excel file use to_*() method</span>
+<span class="c1"># writing to excel file doesn&#39;t happen due to unavailability of openpyxl module</span>
+<span class="n">Gauge_Discharge_data</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;GD_data.xlsx&#39;</span><span class="p">)</span>
+</code></pre></div>
 <pre><code>---------------------------------------------------------------------------
 
 ModuleNotFoundError                       Traceback (most recent call last)
@@ -2518,9 +2731,9 @@ ModuleNotFoundError                       Traceback (most recent call last)
 
 ModuleNotFoundError: No module named 'openpyxl'
 </code></pre>
-<pre><code class="language-python">#openpyxl module has to be installed in python-wrm environment first using conda installer/navigator
-import openpyxl
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">#openpyxl module has to be installed in python-wrm environment first using conda installer/navigator</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">openpyxl</span>
+</code></pre></div>
 <pre><code>---------------------------------------------------------------------------
 
 ModuleNotFoundError                       Traceback (most recent call last)
@@ -2531,57 +2744,62 @@ ModuleNotFoundError                       Traceback (most recent call last)
 
 ModuleNotFoundError: No module named 'openpyxl'
 </code></pre>
-<pre><code class="language-python">import openpyxl
-</code></pre>
-<pre><code class="language-python">#setting index parameter to false removes the row indices in the excel file generated
-Gauge_Discharge_data.to_excel('GD_data.xlsx',index = False)
-</code></pre>
-<pre><code class="language-python">
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">openpyxl</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">#setting index parameter to false removes the row indices in the excel file generated</span>
+<span class="n">Gauge_Discharge_data</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;GD_data.xlsx&#39;</span><span class="p">,</span><span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/URDTyIrD5Pg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<h2 id="lecture-slides-reference">Lecture Slides Reference</h2>
-<p><a href="../pdfs/Session7_Working_with_Pandas_1.pdf">Download Slides PDF</a>{ .md-button }</p>
-<h3 id="extracted-slide-content">Extracted Slide Content</h3>
-<p>!!! note "Note: Text automatically extracted from slides"
-    The following text is extracted from the presentation slides and may require formatting adjustments.</p>
-<h3 id="slide-1">Slide 1</h3>
+<h2 id="lecture-slides-notes">Lecture Slides &amp; Notes</h2>
+<p><embed src="pdfs/Session7_Working_with_Pandas_1.pdf" type="application/pdf" width="100%" height="600px" /></p>
+<p><a href="../pdfs/Session7_Working_with_Pandas_1.pdf">Download Slides PDF</a>{ .md-button .md-button--primary }</p>
+<h3 id="searchable-slide-text">Searchable Slide Text</h3>
+<div class="admonition example">
+<p class="admonition-title">Extracted Data</p>
+<p>The following text is automatically extracted from the slides to facilitate searching.</p>
+<div style='max-height: 300px; overflow-y: auto; font-size: 0.9em; border: 1px solid #ddd; padding: 10px; border-radius: 4px;'>
+</div>
+<p><strong>Slide 1</strong>  </p>
 <h2 id="working-with-pandas">Working with Pandas</h2>
-<p>I
-Chaitanya K S
-Deputy Director
-National Water Academy
-Central Water Commission, Pune</p>
-<h3 id="slide-2">Slide 2</h3>
-<p>Why Pandas?
-• Pandas is a fast, powerful, flexible and easy to use open-source 
-data analysis and manipulation tool, built on top of the Python 
-programming language. https://pandas.pydata.org/
-• Makes working with ‘relational’ or ‘labeled’ data both easy and 
-intuitive
-• Two primary data structures - Series(1-D) and DataFrame(2-D) . 
-Each Column in a DataFrame is a Series</p>
-<h3 id="slide-3">Slide 3</h3>
-<p>Why Pandas? (contd.)
-• Easy handling of missing data 
-• Size mutability: columns can be inserted and deleted
-• Automatic and explicit data alignment
-• group by functionality for aggregating and transforming data
-• Differently indexed data in other Python data structures can be 
-easily converted into DataFrame objects
-• Intelligent label-based slicing, fancy indexing, and subsetting of 
-large data sets
-• Intuitive merging and joining data sets
-• Flexible reshaping and pivoting of data sets
-• Hierarchical labelling of axes
-• Robust IO tools for loading data from various formats 
-• Time series-specific functionality
-For data scientists, working with data is typically divided into multiple stages: munging and 
-cleaning data, analyzing / modeling it, then organizing the results of the analysis into a form 
-suitable for plotting or tabular display. pandas is the ideal tool for all of these tasks. 
-https://pandas.pydata.org/docs/getting_started/overview.html</p>
-<h3 id="slide-4">Slide 4</h3>
-<p>Thank you</p>
+<p>I<br />
+Chaitanya K S<br />
+Deputy Director<br />
+National Water Academy<br />
+Central Water Commission, Pune  </p>
+<p><strong>Slide 2</strong>  </p>
+<p>Why Pandas?<br />
+• Pandas is a fast, powerful, flexible and easy to use open-source <br />
+data analysis and manipulation tool, built on top of the Python <br />
+programming language. https://pandas.pydata.org/<br />
+• Makes working with ‘relational’ or ‘labeled’ data both easy and <br />
+intuitive<br />
+• Two primary data structures - Series(1-D) and DataFrame(2-D) . <br />
+Each Column in a DataFrame is a Series  </p>
+<p><strong>Slide 3</strong>  </p>
+<p>Why Pandas? (contd.)<br />
+• Easy handling of missing data <br />
+• Size mutability: columns can be inserted and deleted<br />
+• Automatic and explicit data alignment<br />
+• group by functionality for aggregating and transforming data<br />
+• Differently indexed data in other Python data structures can be <br />
+easily converted into DataFrame objects<br />
+• Intelligent label-based slicing, fancy indexing, and subsetting of <br />
+large data sets<br />
+• Intuitive merging and joining data sets<br />
+• Flexible reshaping and pivoting of data sets<br />
+• Hierarchical labelling of axes<br />
+• Robust IO tools for loading data from various formats <br />
+• Time series-specific functionality<br />
+For data scientists, working with data is typically divided into multiple stages: munging and <br />
+cleaning data, analyzing / modeling it, then organizing the results of the analysis into a form <br />
+suitable for plotting or tabular display. pandas is the ideal tool for all of these tasks. <br />
+https://pandas.pydata.org/docs/getting_started/overview.html  </p>
+<p><strong>Slide 4</strong>  </p>
+<p>Thank you
+    </div></p>
 
 
 
@@ -2631,7 +2849,7 @@ https://pandas.pydata.org/docs/getting_started/overview.html</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
