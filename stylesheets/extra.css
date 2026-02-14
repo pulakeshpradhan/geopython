@@ -1,9 +1,10 @@
-
 :root {
   --md-text-font: "Inter", sans-serif;
   --md-code-font: "JetBrains Mono", monospace;
-  --md-primary-fg-color: #00796b; /* Teal 700 */
-  --md-accent-fg-color: #004d40; /* Teal 900 */
+  --md-primary-fg-color: #00796b;
+  /* Teal 700 */
+  --md-accent-fg-color: #004d40;
+  /* Teal 900 */
 }
 
 /* General Improvements */
@@ -21,15 +22,17 @@ h1 {
 
 h2 {
   font-weight: 700;
-  margin-top: 2em; 
+  margin-top: 2em;
   padding-bottom: 0.5em;
   border-bottom: 1px solid #eee;
 }
 
 /* Frames (Videos & PDFs) */
-iframe, embed, object {
+iframe,
+embed,
+object {
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin: 1.5em 0;
   width: 100%;
   border: none;
@@ -44,35 +47,67 @@ iframe, embed, object {
 
 .md-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Admonitions */
-.md-typeset .admonition, 
+.md-typeset .admonition,
 .md-typeset details {
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   border: none;
   background-color: #f8f9fa;
 }
 
-.md-typeset .admonition-title, 
-.md-typeset summary {
-  background-color: rgba(0, 121, 107, 0.05) !important;
-  font-weight: 600;
+/* Key Topics Grid System */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 2em 0;
 }
 
-/* Table styling */
-.md-typeset table:not([class]) {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    display: inline-block;
-    max-width: 100%;
-    overflow-x: auto;
+.card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.md-typeset table:not([class]) th {
-    background-color: var(--md-primary-fg-color);
-    color: white;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  height: 60px;
+  width: auto;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin: 0 0 10px 0 !important;
+  font-size: 1.2em;
+  color: var(--md-primary-fg-color);
+}
+
+.card p {
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+[data-md-color-scheme="slate"] .card {
+  background: #1e1e2e;
+  border-color: #333;
+}
+
+[data-md-color-scheme="slate"] .card p {
+  color: #bbb;
 }

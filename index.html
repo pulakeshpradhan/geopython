@@ -394,32 +394,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#core-modules" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-geospatial-python-stack" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Geospatial Python Stack
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#learning-path" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Learning Path
+        Core Modules
       
     </span>
   </a>
@@ -1176,59 +1154,40 @@
 
 <h1 id="geopython-tutorial">GeoPython Tutorial</h1>
 <p>Welcome to the <strong>GeoPython Tutorial</strong>. This comprehensive learning resource is vetted by the <strong>National Water Academy (NWA)</strong> and designed to bridge the gap between traditional GIS workflows and modern, programmatic geospatial analysis.</p>
-<h2 id="overview">Overview</h2>
-<p>In the rapidly evolving landscape of Earth Observation and Data Science, Python has established itself as the lingua franca. This tutorial offers a structured pathway from foundational Python concepts to advanced cloud-based geospatial processing, empowering you to automate workflows, analyze massive datasets, and create dynamic visualizations.</p>
-<h2 id="the-geospatial-python-stack">The Geospatial Python Stack</h2>
-<p>This course leverages the <strong>"Pangeo"</strong> ecosystem—a community-driven collection of open-source tools that work seamlessly together. Implementing these industry-standard libraries ensures your skills are transferable and scalable.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Component</th>
-<th style="text-align: left;">Library</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><strong>Interactive Computing</strong></td>
-<td style="text-align: left;"><a href="https://jupyter.org/"><img alt="Jupyter" src="https://jupyter.org/assets/main-logo.svg" />{ width="100" }</a></td>
-<td style="text-align: left;"><strong>Jupyter Notebooks</strong><br>The command center for your analysis. Jupyter allows you to combine live code, equations, visualizations, and narrative text in a single document, making your research reproducible and easy to share.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Numerical Computing</strong></td>
-<td style="text-align: left;"><a href="https://numpy.org/"><img alt="NumPy" src="https://numpy.org/images/logo.svg" />{ width="100" }</a></td>
-<td style="text-align: left;"><strong>NumPy</strong><br>The fundamental package for scientific computing. It provides high-performance multidimensional array objects, serving as the efficient bedrock upon which almost all other scientific Python libraries are built.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Data Manipulation</strong></td>
-<td style="text-align: left;"><a href="https://pandas.pydata.org/"><img alt="Pandas" src="https://pandas.pydata.org/static/img/pandas.svg" />{ width="100" }</a></td>
-<td style="text-align: left;"><strong>Pandas</strong><br>Providing fast, flexible, and expressive data structures. In this course, you will use Pandas to handle non-spatial attribute data, time-series meteorological records, and perform complex aggregations just like in a database or Excel.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Visualization</strong></td>
-<td style="text-align: left;"><a href="https://matplotlib.org/"><img alt="Matplotlib" src="https://matplotlib.org/stable/_static/logo2.svg" />{ width="100" }</a></td>
-<td style="text-align: left;"><strong>Matplotlib &amp; Seaborn</strong><br>The plotting engines of Python. You will learn to create publication-quality static charts and time-series plots to communicate your findings effectively.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Vector Analysis</strong></td>
-<td style="text-align: left;"><a href="https://geopandas.org/"><img alt="GeoPandas" src="https://geopandas.org/en/stable/_static/geopandas_logo.png" />{ width="100" }</a></td>
-<td style="text-align: left;"><strong>GeoPandas</strong><br>Extends Pandas to allow spatial operations on geometric types. It enables you to read/write files (Shapefile, GeoJSON), map data, and perform geometric operations (intersections, buffers) with ease.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Raster Processing</strong></td>
-<td style="text-align: left;"><a href="https://rasterio.readthedocs.io/en/latest/"><img alt="Rasterio" src="https://rasterio.readthedocs.io/en/latest/_static/rasterio.png" />{ width="100" }</a></td>
-<td style="text-align: left;"><strong>Rasterio &amp; Xarray</strong><br>Specialized libraries for reading and writing geospatial raster data (Satellite imagery, DEMs). They handle coordinate reference systems and large multi-dimensional arrays efficiently.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="learning-path">Learning Path</h2>
-<p>The tutorial is organized into logical modules to ensure a smooth learning curve:</p>
-<ol>
-<li><strong>Python Fundamentals</strong>: Master the syntax, data types, and control structures.</li>
-<li><strong>Data Science Core</strong>: Learn to manipulate data arrays and time-series.</li>
-<li><strong>Geospatial Analysis</strong>: Dive into Vector and Raster data processing.</li>
-<li><strong>Cloud &amp; APIs</strong>: Fetch real-time weather data and scale your analysis.</li>
-</ol>
+<h2 id="core-modules">Core Modules</h2>
+<p>This course is structured around four key pillars of modern geospatial data science.</p>
+<div class="grid-container">
+
+<div class="card">
+  <img src="https://geopandas.org/en/stable/_static/geopandas_logo_web.svg" alt="Vector Data">
+  <h3>Vector Analysis</h3>
+  <p><strong>GeoPandas & Shapely</strong></p>
+  <p>Master the manipulation of geometric data (Points, Lines, Polygons). Perform spatial joins, buffers, and complex overlays efficiently.</p>
+</div>
+
+<div class="card">
+  <img src="https://avatars.githubusercontent.com/u/46967650?v=4" alt="Raster Data">
+  <h3>Raster Processing</h3>
+  <p><strong>Rasterio & Xarray</strong></p>
+  <p>Unlock the power of pixel-based data. Process satellite imagery, DEMs, and climate models using multidimensional array operations.</p>
+</div>
+
+<div class="card">
+  <img src="https://pandas.pydata.org/static/img/pandas.svg" alt="Time Series">
+  <h3>Time Series</h3>
+  <p><strong>Pandas & NumPy</strong></p>
+  <p>Handle temporal data with precision. Analyze meteorological trends, streamflow records, and sensor logs with specialized time-series tools.</p>
+</div>
+
+<div class="card">
+  <img src="https://jupyter.org/assets/homepage/main-logo.svg" alt="Cloud & Web API">
+  <h3>Web APIs & Cloud</h3>
+  <p><strong>Jupyter & Cloud Data</strong></p>
+  <p>Scale your analysis. Connect to live APIs (OpenWeatherMap, OpenMeteo) and process data in the cloud using interactive notebooks.</p>
+</div>
+
+</div>
+
 <h2 id="acknowledgement">Acknowledgement</h2>
 <p>We define our sincere gratitude to <strong>National Water Academy (NWA), Pune</strong> for providing the content, expertise, and resources that made this tutorial possible.</p>
 
