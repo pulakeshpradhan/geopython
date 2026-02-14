@@ -1168,9 +1168,34 @@
 <h2 id="foundation-data-science-stack">Foundation: Data Science Stack</h2>
 <p>Before diving into maps, we master the core tools that power modern data science.</p>
 <ul>
-<li><a href="https://numpy.org/" target="_blank"><img src="https://numpy.org/images/logo.svg" width="100" alt="NumPy" style="vertical-align: middle; margin-right: 10px;"></a> <strong>NumPy</strong> ("The Math Engine"): Python lists are slow for millions of numbers. NumPy makes math instant. It handles the heavy lifting for all other data packages.</li>
-<li><a href="https://pandas.pydata.org/" target="_blank"><img src="https://pandas.pydata.org/static/img/pandas.svg" width="100" alt="Pandas" style="vertical-align: middle; margin-right: 10px;"></a> <strong>Pandas</strong> ("The Super Spreadsheet"): Imagine Excel, but programmable and capable of handling millions of rows in seconds. Pandas lets you filter, sort, and analyze tabular data with ease.</li>
-<li><a href="https://matplotlib.org/" target="_blank"><img src="https://matplotlib.org/stable/_static/logo2.svg" width="100" alt="Matplotlib" style="vertical-align: middle; margin-right: 10px;"></a> <strong>Matplotlib &amp; Seaborn</strong> ("The Artists"): These libraries turn your numbers into visual stories—line charts, bar graphs, heatmaps, and more.</li>
+<li>
+<p><a href="https://numpy.org/" target="_blank"><img src="https://numpy.org/images/logo.svg" width="100" alt="NumPy" style="vertical-align: middle; margin-right: 10px;"></a> <strong>NumPy</strong> ("The Math Engine")</p>
+<p>Python lists are slow for millions of numbers. NumPy makes math instant. It handles the heavy lifting for all other data packages.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="c1"># Create an array and calculate mean</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</code></pre></div>
+</li>
+<li>
+<p><a href="https://pandas.pydata.org/" target="_blank"><img src="https://pandas.pydata.org/static/img/pandas.svg" width="100" alt="Pandas" style="vertical-align: middle; margin-right: 10px;"></a> <strong>Pandas</strong> ("The Super Spreadsheet")</p>
+<p>Imagine Excel, but programmable and capable of handling millions of rows in seconds. Pandas lets you filter, sort, and analyze tabular data with ease.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="c1"># Read a CSV file</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">)</span>
+<span class="c1"># Show first 5 rows</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+</li>
+<li>
+<p><a href="https://matplotlib.org/" target="_blank"><img src="https://matplotlib.org/stable/_static/logo2.svg" width="100" alt="Matplotlib" style="vertical-align: middle; margin-right: 10px;"></a> <strong>Matplotlib</strong> ("The Artists")</p>
+<p>These libraries turn your numbers into visual stories—line charts, bar graphs, heatmaps, and more.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="c1"># Plot a simple line chart</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+</li>
 </ul>
 <h2 id="applied-geospatial-modules">Applied Geospatial Modules</h2>
 <p>Once the foundation is set, we apply these skills to specialized geospatial domains using our grid of advanced modules.</p>
@@ -1180,28 +1205,48 @@
   <img src="https://geopandas.org/en/stable/_static/geopandas_logo_web.svg" alt="Vector Data">
   <h3>Vector Analysis</h3>
   <p><strong>GeoPandas</strong></p>
-  <p>Master the manipulation of geometric data (Points, Lines, Polygons). Perform spatial joins, buffers, and complex overlays efficiently.</p>
+  <p>Master the manipulation of geometric data (Points, Lines, Polygons).</p>
+  <div style="text-align: left; width: 100%; margin-top: 10px;">
+  <pre><code class="language-python">import geopandas as gpd
+gdf = gpd.read_file("map.shp")
+gdf.plot()</code></pre>
+  </div>
 </div>
 
 <div class="card">
   <img src="https://avatars.githubusercontent.com/u/46967650?v=4" alt="Raster Data">
   <h3>Raster Processing</h3>
   <p><strong>Rasterio & Xarray</strong></p>
-  <p>Unlock the power of pixel-based data. Process satellite imagery, DEMs, and climate models using multidimensional array operations.</p>
+  <p>Unlock the power of pixel-based data (Satellite imagery, DEMs).</p>
+  <div style="text-align: left; width: 100%; margin-top: 10px;">
+  <pre><code class="language-python">import rasterio
+src = rasterio.open("image.tif")
+print(src.meta)</code></pre>
+  </div>
 </div>
 
 <div class="card">
   <img src="https://pandas.pydata.org/static/img/pandas.svg" alt="Time Series">
   <h3>Time Series</h3>
   <p><strong>Advanced Pandas</strong></p>
-  <p>Handle temporal data with precision. Analyze meteorological trends, streamflow records, and sensor logs with specialized time-series tools.</p>
+  <p>Handle temporal data with precision for meteorological trends.</p>
+  <div style="text-align: left; width: 100%; margin-top: 10px;">
+  <pre><code class="language-python">df['date'] = pd.to_datetime(df['date'])
+df.set_index('date', inplace=True)
+df.resample('M').mean()</code></pre>
+  </div>
 </div>
 
 <div class="card">
   <img src="https://jupyter.org/assets/homepage/main-logo.svg" alt="Cloud & Web API">
   <h3>Web APIs & Cloud</h3>
   <p><strong>Jupyter & APIs</strong></p>
-  <p>Scale your analysis. Connect to live APIs (OpenWeatherMap, OpenMeteo) and process data in the cloud using interactive notebooks.</p>
+  <p>Connect to live APIs like OpenWeatherMap.</p>
+  <div style="text-align: left; width: 100%; margin-top: 10px;">
+  <pre><code class="language-python">import requests
+res = requests.get(api_url)
+data = res.json()</code></pre>
+  </div>
 </div>
 
 </div>
