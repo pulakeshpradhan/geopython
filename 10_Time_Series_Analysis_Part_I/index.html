@@ -956,30 +956,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lecture-slides-notes" class="md-nav__link">
+  <a href="#lecture-visualization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lecture Slides &amp; Notes
+        Lecture Visualization
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Lecture Slides &amp; Notes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#searchable-slide-text" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Searchable Slide Text
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1410,115 +1393,104 @@ https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resa
 </code></pre></div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vHaJttWUCNg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<h2 id="lecture-slides-notes">Lecture Slides &amp; Notes</h2>
-<p><embed src="pdfs/Time Series in Python.pdf" type="application/pdf" width="100%" height="600px" /></p>
-<p><a href="../pdfs/Time%20Series%20in%20Python.pdf">Download Slides PDF</a>{ .md-button .md-button--primary }</p>
-<h3 id="searchable-slide-text">Searchable Slide Text</h3>
-<div class="admonition example">
-<p class="admonition-title">Extracted Data</p>
-<p>The following text is automatically extracted from the slides to facilitate searching.</p>
-<div style='max-height: 300px; overflow-y: auto; font-size: 0.9em; border: 1px solid #ddd; padding: 10px; border-radius: 4px;'>
-</div>
-<p><strong>Slide 1</strong>  </p>
-<p>Time Series Analysis <br />
-using Python<br />
-Sukant Jain,<br />
-Scientist C <br />
-National Institute of Hydrology, <br />
-Roorkee<br />
-sukant.nihr@gov.in  </p>
-<p><strong>Slide 2</strong>  </p>
-<p>Gridded Format for Storing Climate Data  </p>
-<p><strong>Slide 3</strong>  </p>
-<p>What is Gridded Data?<br />
-Definition<br />
-Gridded data organizes <br />
-spatial and temporal <br />
-information into a <br />
-structured grid, where <br />
-each cell represents a <br />
-specific location or time <br />
-interval.<br />
-Structure<br />
-Each cell in the grid <br />
-contains data values <br />
-such as temperature, <br />
-precipitation, or wind <br />
-speed, providing a <br />
-comprehensive <br />
-representation of <br />
-environmental <br />
-conditions.<br />
-Applications<br />
-Gridded data is widely <br />
-used in climate <br />
-modeling, weather <br />
-forecasting, and <br />
-environmental <br />
-monitoring, providing <br />
-valuable insights into <br />
-climate change and its <br />
-impacts.  </p>
-<p><strong>Slide 4</strong>  </p>
-<p>What is Gridded Data?  </p>
-<p><strong>Slide 5</strong>  </p>
-<p>Efficiency of Gridded Data Storage<br />
-CSV Files<br />
-CSV files are simple and easy to use, but they suffer from data redundancy, <br />
-large file sizes, and slow access times, making them inefficient for storing <br />
-large datasets.<br />
-Gridded Data Formats<br />
-Gridded data formats are designed for efficient storage, reducing redundancy <br />
-and enabling faster access times. They are well-suited for handling massive <br />
-datasets.<br />
-Advantages<br />
-Gridded data formats provide improved data organization, efficient storage, <br />
-reduced redundancy, and enhanced accessibility, making them ideal for large-<br />
-scale climate data analysis.<br />
-Disadvantages<br />
-Specialized software is required to access and manipulate data in gridded <br />
-formats, necessitating specific skills and tools for efficient utilization.  </p>
-<p><strong>Slide 6</strong>  </p>
-<p>Different Formats of Gridded Data<br />
-• NetCDF (Network Common Data Form) is widely used in climate and meteorological <br />
-data, supporting large, multi-dimensional arrays of data.<br />
-• HDF5 (Hierarchical Data Format) is a flexible and self-describing format that is well-<br />
-suited for storing complex data hierarchies.<br />
-• GRIB (GRIdded Binary) is a widely used format for storing meteorological data. It is <br />
-standardized by the WMO<br />
-• GeoTIFF (Geographic Tagged Image File Format) is a standard format for storing <br />
-georeferenced raster data. It supports a wide range of spatial data types, including <br />
-elevation, land cover, and precipitation.  </p>
-<p><strong>Slide 7</strong>  </p>
-<p>Tools for Extracting Data from Gridded Formats<br />
-Type Tools Description<br />
-Python Libraries netCDF4, h5py, xarray Python libraries provide functionalities for reading <br />
-and writing NetCDF, HDF5, and other gridded data <br />
-formats.<br />
-Command Line Tools ncdump, h5dump, <br />
-cdo<br />
-Command line tools offer efficient ways to extract <br />
-data from gridded formats, convert data between <br />
-formats, and perform basic data manipulations.<br />
-Software Applications Panoply, ArcGIS, QGIS Specialized software applications provide interactive <br />
-environments for visualizing, analyzing, and <br />
-manipulating gridded data.<br />
-Cloud Computing <br />
-Platform<br />
-Google Earth Engine Very easy to play around the gridded data hosted in <br />
-that platform  </p>
-<p><strong>Slide 8</strong>  </p>
-<p>PYTHON PACKAGE <br />
-A Python package or module is a collection of Python code, such as functions and classes, organized to perform <br />
-specific tasks or solve problems efficiently.<br />
-• xarray: Provides data structures for multi-dimensional arrays, enabling efficient manipulation and analysis of <br />
-labeled data.<br />
-• pandas: Offers powerful data structures like DataFrames for data manipulation and analysis, making it a staple <br />
-for data science.<br />
-• numpy: Provides support for large, multi-dimensional arrays and matrices, along with a collection of <br />
-mathematical functions to operate on them.  </p>
-<pre><code>&lt;/div&gt;
-</code></pre>
+<h2 id="lecture-visualization">Lecture Visualization</h2>
+<p><embed src="pdfs/Time Series in Python.pdf" type="application/pdf" width="100%" height="600px" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" /></p>
+<p align="center"><a href="pdfs/Time Series in Python.pdf" class="md-button md-button--primary">Download Lecture Slides</a></p>
+
+<details class="info">
+<summary>View Full Lecture Transcript</summary>
+<p>The following content is extracted from the lecture slides.</p>
+<p>Time Series Analysis</p>
+<p>using Python</p>
+<p>Sukant Jain,</p>
+<p>Scientist C</p>
+<p>National Institute of Hydrology,</p>
+<p>Roorkee</p>
+<p>sukant.nihr@gov.in</p>
+<p>Gridded Format for Storing Climate Data</p>
+<p>What is Gridded Data?</p>
+<p>Definition</p>
+<p>Gridded data organizes</p>
+<p>spatial and temporal</p>
+<p>information into a</p>
+<p>structured grid, where</p>
+<p>each cell represents a</p>
+<p>specific location or time</p>
+<p>interval.</p>
+<p>Structure</p>
+<p>Each cell in the grid</p>
+<p>contains data values</p>
+<p>such as temperature,</p>
+<p>precipitation, or wind</p>
+<p>speed, providing a</p>
+<p>comprehensive</p>
+<p>representation of</p>
+<p>environmental</p>
+<p>conditions.</p>
+<p>Applications</p>
+<p>Gridded data is widely</p>
+<p>used in climate</p>
+<p>modeling, weather</p>
+<p>forecasting, and</p>
+<p>environmental</p>
+<p>monitoring, providing</p>
+<p>valuable insights into</p>
+<p>climate change and its</p>
+<p>impacts.</p>
+<p>What is Gridded Data?</p>
+<p>Efficiency of Gridded Data Storage</p>
+<p>CSV Files</p>
+<p>CSV files are simple and easy to use, but they suffer from data redundancy,</p>
+<p>large file sizes, and slow access times, making them inefficient for storing</p>
+<p>large datasets.</p>
+<p>Gridded Data Formats</p>
+<p>Gridded data formats are designed for efficient storage, reducing redundancy</p>
+<p>and enabling faster access times. They are well-suited for handling massive</p>
+<p>datasets.</p>
+<p>Advantages</p>
+<p>Gridded data formats provide improved data organization, efficient storage,</p>
+<p>reduced redundancy, and enhanced accessibility, making them ideal for large-</p>
+<p>scale climate data analysis.</p>
+<p>Disadvantages</p>
+<p>Specialized software is required to access and manipulate data in gridded</p>
+<p>formats, necessitating specific skills and tools for efficient utilization.</p>
+<p>Different Formats of Gridded Data</p>
+<p>• NetCDF (Network Common Data Form) is widely used in climate and meteorological</p>
+<p>data, supporting large, multi-dimensional arrays of data.</p>
+<p>• HDF5 (Hierarchical Data Format) is a flexible and self-describing format that is well-</p>
+<p>suited for storing complex data hierarchies.</p>
+<p>• GRIB (GRIdded Binary) is a widely used format for storing meteorological data. It is</p>
+<p>standardized by the WMO</p>
+<p>• GeoTIFF (Geographic Tagged Image File Format) is a standard format for storing</p>
+<p>georeferenced raster data. It supports a wide range of spatial data types, including</p>
+<p>elevation, land cover, and precipitation.</p>
+<p>Tools for Extracting Data from Gridded Formats</p>
+<p>Type Tools Description</p>
+<p>Python Libraries netCDF4, h5py, xarray Python libraries provide functionalities for reading</p>
+<p>and writing NetCDF, HDF5, and other gridded data</p>
+<p>formats.</p>
+<p>Command Line Tools ncdump, h5dump,</p>
+<p>cdo</p>
+<p>Command line tools offer efficient ways to extract</p>
+<p>data from gridded formats, convert data between</p>
+<p>formats, and perform basic data manipulations.</p>
+<p>Software Applications Panoply, ArcGIS, QGIS Specialized software applications provide interactive</p>
+<p>environments for visualizing, analyzing, and</p>
+<p>manipulating gridded data.</p>
+<p>Cloud Computing</p>
+<p>Platform</p>
+<p>Google Earth Engine Very easy to play around the gridded data hosted in</p>
+<p>that platform</p>
+<p>PYTHON PACKAGE</p>
+<p>A Python package or module is a collection of Python code, such as functions and classes, organized to perform</p>
+<p>specific tasks or solve problems efficiently.</p>
+<p>• xarray: Provides data structures for multi-dimensional arrays, enabling efficient manipulation and analysis of</p>
+<p>labeled data.</p>
+<p>• pandas: Offers powerful data structures like DataFrames for data manipulation and analysis, making it a staple</p>
+<p>for data science.</p>
+<p>• numpy: Provides support for large, multi-dimensional arrays and matrices, along with a collection of</p>
+<p>mathematical functions to operate on them.</p>
+</details>
 
 
 

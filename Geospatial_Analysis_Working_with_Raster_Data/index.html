@@ -1531,133 +1531,109 @@
 <p>Notebook created by Prasun Kumar Gupta, Geoinformatics Department, Indian Institute of Remote Sensing (ISRO), Dehradun. Contact: prasun@iirs.gov.in</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3JHdxtNQbv8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<h2 id="lecture-slides-notes">Lecture Slides &amp; Notes</h2>
-<p><embed src="pdfs/Geospatial python Raster-slides.pdf" type="application/pdf" width="100%" height="600px" /></p>
-<p><a href="../pdfs/Geospatial%20python%20Raster-slides.pdf">Download Slides PDF</a>{ .md-button .md-button--primary }</p>
-<h3 id="searchable-slide-text">Searchable Slide Text</h3>
-<div class="admonition example">
-<p class="admonition-title">Extracted Data</p>
-<p>The following text is automatically extracted from the slides to facilitate searching.</p>
-<div style='max-height: 300px; overflow-y: auto; font-size: 0.9em; border: 1px solid #ddd; padding: 10px; border-radius: 4px;'>
-</div>
-<p><strong>Slide 1</strong>  </p>
-<p>22-09-2022<br />
-1<br />
-I N D I A N  I N S T I T U T E  O F  R E M O T E  S E N S I N G ,  D E H R A D U N<br />
-Geospatial Analysis using Python <br />
--<br />
-Working with Raster Data<br />
-Prasun Kumar Gupta<br />
-Scientist/Engineer-'SE', Geoinformatics Department<br />
-Geospatial Technology and Outreach Program Group<br />
-Indian Institute of Remote Sensing (ISRO), Dehradun<br />
-prasun@iirs.gov.in<br />
-9/22/2022 1<br />
-Geospatial Analysis using Python <br />
-• Contemporary proprietary software have limited traditional <br />
-functionalities; Not suited for process modeling<br />
-• Convergence of artificial intelligence, big data, internet of <br />
-things and geospatial sciences leads to demand for new <br />
-tools, currently not present in conventional software<br />
-• Unthinkable to progress in geospatial research without <br />
-automation<br />
-• Big data processing is impossible on standalone systems <br />
-using conventional remote sensing (RS) and GIS softwares<br />
-• Large number of libraries supporting RS&amp;GIS in Python  </p>
-<p><strong>Slide 2</strong>  </p>
-<p>22-09-2022<br />
-2<br />
-Python Geospatial Ecosystem<br />
-Popular Python Geospatial Libraries<br />
-Vector based Raster based<br />
-OGR GDAL<br />
-Fiona Rasterio<br />
-pyshp or shapefile OpenCV<br />
-Geopandas rasterstats<br />
-Shapely scikit-image<br />
-PySAL PIL / Pillow<br />
-Packages linked with other software<br />
-grass.pygrass, pyqgis, arcpy, googlemaps, earthengine<br />
-All are well maintained and documented. Each is meant for a specific purpose.  </p>
-<p><strong>Slide 3</strong>  </p>
-<p>22-09-2022<br />
-3<br />
-GDAL / OGR <br />
--<br />
- History<br />
-• Launched in late 1998 by Frank Warmerdam<br />
-• Core Team: Even Rouault, Howard Butler, <br />
-Markus Neteler, and many more.<br />
-• URL: www.gdal.org <br />
-• Software using GDAL (MIT license)<br />
-• Nearly 112 listed on the website1 (58 free; 53 paid)<br />
-• Includes all popular software like ArcGIS, QGIS, Google <br />
-Earth, GRASS GIS, IDRISI, ILWIS, SAGA, <br />
-SkylineGlobe, Geoserver etc.<br />
-1 https://gdal.org/software_using_gdal  </p>
-<p><strong>Slide 4</strong>  </p>
-<p>22-09-2022<br />
-4<br />
-What is GDAL?<br />
-• GDAL is a translator library for raster and vector<br />
-geospatial data formats.<br />
-• X/MIT style Open Source License by OSGEO.<br />
-• As a library, it presents a single raster abstract data<br />
-model and single vector abstract data model to the calling<br />
-application for all supported formats.<br />
-• It also comes with a variety of useful command line<br />
-utilities for data translation and processing.<br />
-• Written in C/C++; “Wrapped” for use with Python, Perl, VB,<br />
-C#, R, Java …<br />
-Why GDAL?<br />
-• Supports all known GIS file formats<br />
-• Supported raster formats (159 drivers2): <br />
-• Erdas Imagine .img, GeoTIFF, netCDF, HDF<br />
-• OGC Web services: WCS, WMS, WMTS<br />
-• ECW, MrSID<br />
-• JPEG, JPEG2000, PNG, GIF, BMP<br />
-• September 2022 GDAL/OGR 3.5.2 release.<br />
-2 https://gdal.org/drivers/raster/index.html  </p>
-<p><strong>Slide 5</strong>  </p>
-<p>22-09-2022<br />
-5<br />
-GDAL Command Line Utilities<br />
-• gdalinfo: Lists information about a raster dataset.<br />
-• gdal_translate: Converts raster data between different formats.<br />
-• gdalwarp: Image reprojection and warping utility.<br />
-• gdal_contour: Builds vector contour lines from a DEM.<br />
-• gdaldem: Tools to analyze and visualize DEMs.<br />
-• gdal_rasterize: Burns vector geometries into a raster.<br />
-• gdal_grid: Creates regular grid from the scattered data.<br />
-• gdal_proximity.py: Produces a raster proximity map.<br />
-• gdal_polygonize.py: Produces a polygon layer from a raster.<br />
-• gdal_calc.py: Command line raster calculator with numpy syntax.<br />
-and more …<br />
-Installing GDAL using Anaconda Navigator<br />
-(Preferred method)  </p>
-<p><strong>Slide 6</strong>  </p>
-<p>22-09-2022<br />
-6<br />
-Installing GDAL using Anaconda Prompt<br />
-Environment name<br />
-Packages to be <br />
-installed<br />
-• Once the shown command is run, it will create a new <br />
-virtual environment called “geo” containing the specified <br />
-packages (GDAL and Geopandas)<br />
-• Dependencies (such as Numpy, Pandas etc.) will also get <br />
-automatically installed<br />
-Books  </p>
-<p><strong>Slide 7</strong>  </p>
-<p>22-09-2022<br />
-7<br />
-I N D I A N  I N S T I T U T E  O F  R E M O T E  S E N S I N G ,  D E H R A D U N<br />
-prasun@iirs.gov.in<br />
-Q A<br />
-Time for some hands-on <br />
-using Python  </p>
-<pre><code>&lt;/div&gt;
-</code></pre>
+<h2 id="lecture-visualization">Lecture Visualization</h2>
+<p><embed src="pdfs/Geospatial python Raster-slides.pdf" type="application/pdf" width="100%" height="600px" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" /></p>
+<p align="center"><a href="pdfs/Geospatial python Raster-slides.pdf" class="md-button md-button--primary">Download Lecture Slides</a></p>
+
+<details class="info">
+<summary>View Full Lecture Transcript</summary>
+<p>The following content is extracted from the lecture slides.</p>
+<p>I N D I A N  I N S T I T U T E  O F  R E M O T E  S E N S I N G ,  D E H R A D U N</p>
+<p>Geospatial Analysis using Python</p>
+<p>-</p>
+<p>Working with Raster Data</p>
+<p>Prasun Kumar Gupta</p>
+<p>Scientist/Engineer-'SE', Geoinformatics Department</p>
+<p>Geospatial Technology and Outreach Program Group</p>
+<p>Indian Institute of Remote Sensing (ISRO), Dehradun</p>
+<p>prasun@iirs.gov.in</p>
+<p>9/22/2022 1</p>
+<p>Geospatial Analysis using Python</p>
+<p>• Contemporary proprietary software have limited traditional</p>
+<p>functionalities; Not suited for process modeling</p>
+<p>• Convergence of artificial intelligence, big data, internet of</p>
+<p>things and geospatial sciences leads to demand for new</p>
+<p>tools, currently not present in conventional software</p>
+<p>• Unthinkable to progress in geospatial research without</p>
+<p>automation</p>
+<p>• Big data processing is impossible on standalone systems</p>
+<p>using conventional remote sensing (RS) and GIS softwares</p>
+<p>• Large number of libraries supporting RS&amp;GIS in Python</p>
+<p>Python Geospatial Ecosystem</p>
+<p>Popular Python Geospatial Libraries</p>
+<p>Vector based Raster based</p>
+<p>OGR GDAL</p>
+<p>Fiona Rasterio</p>
+<p>pyshp or shapefile OpenCV</p>
+<p>Geopandas rasterstats</p>
+<p>Shapely scikit-image</p>
+<p>PySAL PIL / Pillow</p>
+<p>Packages linked with other software</p>
+<p>grass.pygrass, pyqgis, arcpy, googlemaps, earthengine</p>
+<p>All are well maintained and documented. Each is meant for a specific purpose.</p>
+<p>GDAL / OGR</p>
+<p>-</p>
+<p>History</p>
+<p>• Launched in late 1998 by Frank Warmerdam</p>
+<p>• Core Team: Even Rouault, Howard Butler,</p>
+<p>Markus Neteler, and many more.</p>
+<p>• URL: www.gdal.org</p>
+<p>• Software using GDAL (MIT license)</p>
+<p>• Nearly 112 listed on the website1 (58 free; 53 paid)</p>
+<p>• Includes all popular software like ArcGIS, QGIS, Google</p>
+<p>Earth, GRASS GIS, IDRISI, ILWIS, SAGA,</p>
+<p>SkylineGlobe, Geoserver etc.</p>
+<p>1 https://gdal.org/software_using_gdal</p>
+<p>What is GDAL?</p>
+<p>• GDAL is a translator library for raster and vector</p>
+<p>geospatial data formats.</p>
+<p>• X/MIT style Open Source License by OSGEO.</p>
+<p>• As a library, it presents a single raster abstract data</p>
+<p>model and single vector abstract data model to the calling</p>
+<p>application for all supported formats.</p>
+<p>• It also comes with a variety of useful command line</p>
+<p>utilities for data translation and processing.</p>
+<p>• Written in C/C++; “Wrapped” for use with Python, Perl, VB,</p>
+<p>C#, R, Java …</p>
+<p>Why GDAL?</p>
+<p>• Supports all known GIS file formats</p>
+<p>• Supported raster formats (159 drivers2):</p>
+<p>• Erdas Imagine .img, GeoTIFF, netCDF, HDF</p>
+<p>• OGC Web services: WCS, WMS, WMTS</p>
+<p>• ECW, MrSID</p>
+<p>• JPEG, JPEG2000, PNG, GIF, BMP</p>
+<p>• September 2022 GDAL/OGR 3.5.2 release.</p>
+<p>2 https://gdal.org/drivers/raster/index.html</p>
+<p>GDAL Command Line Utilities</p>
+<p>• gdalinfo: Lists information about a raster dataset.</p>
+<p>• gdal_translate: Converts raster data between different formats.</p>
+<p>• gdalwarp: Image reprojection and warping utility.</p>
+<p>• gdal_contour: Builds vector contour lines from a DEM.</p>
+<p>• gdaldem: Tools to analyze and visualize DEMs.</p>
+<p>• gdal_rasterize: Burns vector geometries into a raster.</p>
+<p>• gdal_grid: Creates regular grid from the scattered data.</p>
+<p>• gdal_proximity.py: Produces a raster proximity map.</p>
+<p>• gdal_polygonize.py: Produces a polygon layer from a raster.</p>
+<p>• gdal_calc.py: Command line raster calculator with numpy syntax.</p>
+<p>and more …</p>
+<p>Installing GDAL using Anaconda Navigator</p>
+<p>(Preferred method)</p>
+<p>Installing GDAL using Anaconda Prompt</p>
+<p>Environment name</p>
+<p>Packages to be</p>
+<p>installed</p>
+<p>• Once the shown command is run, it will create a new</p>
+<p>virtual environment called “geo” containing the specified</p>
+<p>packages (GDAL and Geopandas)</p>
+<p>• Dependencies (such as Numpy, Pandas etc.) will also get</p>
+<p>automatically installed</p>
+<p>Books</p>
+<p>I N D I A N  I N S T I T U T E  O F  R E M O T E  S E N S I N G ,  D E H R A D U N</p>
+<p>prasun@iirs.gov.in</p>
+<p>Q A</p>
+<p>Time for some hands-on</p>
+<p>using Python</p>
+</details>
 
 
 

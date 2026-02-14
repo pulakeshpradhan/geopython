@@ -1004,34 +1004,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#lecture-slides-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lecture Slides &amp; Notes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Lecture Slides &amp; Notes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#searchable-slide-text" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Searchable Slide Text
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3970,94 +3942,6 @@ Datum: World Geodetic System 1984 ensemble
 </code></pre>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<h2 id="lecture-slides-notes">Lecture Slides &amp; Notes</h2>
-<p><embed src="pdfs/Cloud based Geospatial Data Processing.pdf" type="application/pdf" width="100%" height="600px" /></p>
-<p><a href="../pdfs/Cloud%20based%20Geospatial%20Data%20Processing.pdf">Download Slides PDF</a>{ .md-button .md-button--primary }</p>
-<h3 id="searchable-slide-text">Searchable Slide Text</h3>
-<div class="admonition example">
-<p class="admonition-title">Extracted Data</p>
-<p>The following text is automatically extracted from the slides to facilitate searching.</p>
-<div style='max-height: 300px; overflow-y: auto; font-size: 0.9em; border: 1px solid #ddd; padding: 10px; border-radius: 4px;'>
-</div>
-<p><strong>Slide 1</strong>  </p>
-<p>10/13/2025<br />
-1<br />
-I N D I A N  I N S T I T U T E  O F  R E M O T E  S E N S I N G ,  D E H R A D U N<br />
-Cloud based Geospatial Data <br />
-Processing in Python<br />
-Prasun Kumar Gupta<br />
-Scientist/Engineer-'SF', Geoinformatics Department<br />
-Geospatial Technology and Outreach Program Group<br />
-Indian Institute of Remote Sensing (ISRO), Dehradun<br />
-prasun@iirs.gov.in<br />
-10/13/2025 1<br />
-Introduction<br />
-• STAC, COG (Cloud Optimized GeoTIFF), and Xarray are three<br />
-technologies that work together in a powerful workflow for handling and<br />
-analyzing geospatial data.<br />
-Montero et al., 2024  </p>
-<p><strong>Slide 2</strong>  </p>
-<p>10/13/2025<br />
-2<br />
-STAC<br />
-• Started in 2018, rapidly developing<br />
-• New de facto metadata and search standard<br />
-• May become an OGC standard in the future.<br />
-• Describes datasets at the level of individual files.<br />
-• It is most commonly used for remote sensing<br />
-data, but it is suitable for any data with time and<br />
-location information.<br />
-• Users: ESA, USGS, Microsoft Planetary<br />
-computer, Google Earth Engine, FMI and CSC<br />
-https://www.stacindex.org/<br />
-Cloud<br />
--<br />
-Optimized <br />
-GeoTiff<br />
- (COG)<br />
-• COG is a regular GeoTIFF file, aimed at being<br />
-hosted on a HTTP file server, with an internal<br />
-organization that enables more efficient<br />
-workflows on the cloud.<br />
-• It does this by leveraging the ability of clients<br />
-issuing ​HTTP GET range requests to ask for just<br />
-the parts of a file they need.<br />
-• Enables partial loading of data<br />
-• Only loads data for a specific area<br />
-• Generalized version of the data is available<br />
-element84.com  </p>
-<p><strong>Slide 3</strong>  </p>
-<p>10/13/2025<br />
-3<br />
-Xarray<br />
-• Introduces labels in the form of dimensions, coordinates, and attributes on top<br />
-of raw NumPy-like arrays, which allows for more intuitive, more concise, and<br />
-less error-prone user experience.<br />
-• Includes a large and growing library of domain-agnostic functions for advanced<br />
-analytics and visualization with these data structures.<br />
-xarray.dev<br />
-How do they work together?<br />
-• A STAC catalog provides links to individual COG files.<br />
-• A library like pystac reads the STAC catalog to find the relevant <br />
-COGs for a specific area and time.<br />
-• Instead of downloading the full COG, these libraries use the STAC <br />
-metadata and the COG's structure to read only the necessary parts.<br />
-• This data is then loaded into an Xarray DataArray, ready for <br />
-analysis. This process is often done lazily, meaning the data is not <br />
-actually loaded until you perform an operation on it.<br />
-• Once the data is in an Xarray object, you can easily filter it, perform <br />
-calculations, and create composites without manually handling all <br />
-the file merging.  </p>
-<p><strong>Slide 4</strong>  </p>
-<p>10/13/2025<br />
-4<br />
-I N D I A N  I N S T I T U T E  O F  R E M O T E  S E N S I N G ,  D E H R A D U N<br />
-prasun@iirs.gov.in<br />
-Q A<br />
-Time for some hands-on <br />
-using Python  </p>
-<pre><code>&lt;/div&gt;
-</code></pre>
 
 
 
