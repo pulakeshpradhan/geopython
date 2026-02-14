@@ -1,0 +1,1662 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../01_Basic_Data_types/">
+      
+      
+        <link rel="next" href="../03_Functions_Loops_Controlflow/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>02 Data Structures in Python - GeoPython Tutorial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-structures" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GeoPython Tutorial" class="md-header__button md-logo" aria-label="GeoPython Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoPython Tutorial
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              02 Data Structures in Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GeoPython Tutorial" class="md-nav__button md-logo" aria-label="GeoPython Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GeoPython Tutorial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_Basic_Data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Basic Data types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Data Structures in Python
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Data Structures in Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tuples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tuples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tuples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tuple-indexing-and-slicing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tuple Indexing and Slicing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuple-packing-unpacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tuple Packing &amp; Unpacking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tuple Packing &amp; Unpacking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tuples-are-immutable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tuples are immutable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lists
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-indexing-and-slicing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List indexing and slicing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-mutability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Mutability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dictionary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture-slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lecture Slides
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_Functions_Loops_Controlflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 Functions Loops Controlflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_OOP_Error_and_File_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 OOP Error and File handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_Working_with_Pandas_Part_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 Working with Pandas Part I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_Working_with_Pandas_Part_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 Working with Pandas Part II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 Geospatial Analysis Vector Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_Working_with_Numpy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 Working with Numpy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_Time_Series_Analysis_Part_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Time Series Analysis Part I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_Time_Series_Analysis_Part_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Time Series Analysis Part II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Visualization_using_Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization using Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Geospatial_Analysis_Working_with_Raster_Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geospatial Analysis Working with Raster Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NWA_Cloud_based_Geospatial_data_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NWA Cloud based Geospatial data processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenWeatherMapAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWeatherMapAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Open_Meteo_WEB_API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Meteo WEB API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prediction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web_Scraping_web_Table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Scraping web Table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tuples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tuples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tuples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tuple-indexing-and-slicing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tuple Indexing and Slicing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuple-packing-unpacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tuple Packing &amp; Unpacking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tuple Packing &amp; Unpacking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tuples-are-immutable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tuples are immutable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lists
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-indexing-and-slicing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List indexing and slicing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-mutability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Mutability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dictionary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture-slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lecture Slides
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="data-structures">Data Structures</h1>
+<h2 id="tuples">Tuples</h2>
+<pre><code class="language-python">#Creation of Tuple with Tuple Literal
+t1 = (1,2,3,4)
+t1
+</code></pre>
+<pre><code>(1, 2, 3, 4)
+</code></pre>
+<pre><code class="language-python">type(t1)
+</code></pre>
+<pre><code>tuple
+</code></pre>
+<pre><code class="language-python">#Creation of Tuple with builtin tuple() function
+t2 = tuple()
+</code></pre>
+<pre><code class="language-python">t2
+</code></pre>
+<pre><code>()
+</code></pre>
+<pre><code class="language-python">type(t2)
+</code></pre>
+<pre><code>tuple
+</code></pre>
+<pre><code class="language-python">t3 = tuple(&quot;Hello World&quot;)
+</code></pre>
+<pre><code class="language-python">t3
+</code></pre>
+<pre><code>('H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd')
+</code></pre>
+<pre><code class="language-python">type(t3)
+</code></pre>
+<pre><code>tuple
+</code></pre>
+<pre><code class="language-python">#integer can't be passed as an argument to tuple() method
+t4 = tuple(1)
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+~\AppData\Local\Temp/ipykernel_9284/3320543265.py in &lt;module&gt;
+----&gt; 1 t4 = tuple(1)
+
+
+TypeError: 'int' object is not iterable
+</code></pre>
+<pre><code class="language-python">t5 = (1)
+</code></pre>
+<pre><code class="language-python">type(t5)
+</code></pre>
+<pre><code>int
+</code></pre>
+<pre><code class="language-python">t6 = ('a')
+</code></pre>
+<pre><code class="language-python">type(t6)
+</code></pre>
+<pre><code>str
+</code></pre>
+<pre><code class="language-python">t7 = (1,)
+</code></pre>
+<pre><code class="language-python">t7
+</code></pre>
+<pre><code>(1,)
+</code></pre>
+<pre><code class="language-python">type(t7)
+</code></pre>
+<pre><code>tuple
+</code></pre>
+<pre><code class="language-python">#length of a Tuple
+len(t1)
+</code></pre>
+<pre><code>4
+</code></pre>
+<h4 id="tuple-indexing-and-slicing">Tuple Indexing and Slicing</h4>
+<pre><code class="language-python">t8 = (1,2,3,4,'a','b',&quot;Hello World&quot;, 2.6, True)
+</code></pre>
+<pre><code class="language-python">type(t8)
+</code></pre>
+<pre><code>tuple
+</code></pre>
+<pre><code class="language-python">t8[0]
+</code></pre>
+<pre><code>1
+</code></pre>
+<pre><code class="language-python">t8[0:4]
+</code></pre>
+<pre><code>(1, 2, 3, 4)
+</code></pre>
+<pre><code class="language-python">t8[-1]
+</code></pre>
+<pre><code>True
+</code></pre>
+<h4 id="tuple-packing-unpacking">Tuple Packing &amp; Unpacking</h4>
+<pre><code class="language-python">series = 1,2,3,4,5
+</code></pre>
+<pre><code class="language-python">series
+</code></pre>
+<pre><code>(1, 2, 3, 4, 5)
+</code></pre>
+<pre><code class="language-python">type(series)
+</code></pre>
+<pre><code>tuple
+</code></pre>
+<pre><code class="language-python">coordinates = 78.5,20.5
+coordinates
+</code></pre>
+<pre><code>(78.5, 20.5)
+</code></pre>
+<pre><code class="language-python">x = coordinates[0]
+y = coordinates[1]
+</code></pre>
+<pre><code class="language-python">x
+</code></pre>
+<pre><code>78.5
+</code></pre>
+<pre><code class="language-python">y
+</code></pre>
+<pre><code>20.5
+</code></pre>
+<pre><code class="language-python">x2, y2, location = 79.5 , 21.4 , 'XYZ'
+</code></pre>
+<pre><code class="language-python">x2
+</code></pre>
+<pre><code>79.5
+</code></pre>
+<pre><code class="language-python">y2
+</code></pre>
+<pre><code>21.4
+</code></pre>
+<pre><code class="language-python">location
+</code></pre>
+<pre><code>'XYZ'
+</code></pre>
+<pre><code class="language-python">#use of in keyword to check the presence of an element in a Tuple
+&quot;Hello World&quot; in t8 
+</code></pre>
+<pre><code>True
+</code></pre>
+<pre><code class="language-python">&quot;hello world&quot; in t8
+</code></pre>
+<pre><code>False
+</code></pre>
+<h5 id="tuples-are-immutable">Tuples are immutable</h5>
+<pre><code class="language-python">t8[0]=5
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+~\AppData\Local\Temp/ipykernel_9284/3795153408.py in &lt;module&gt;
+----&gt; 1 t8[0]=5
+
+
+TypeError: 'tuple' object does not support item assignment
+</code></pre>
+<h2 id="lists">Lists</h2>
+<pre><code class="language-python">#creation of list with list literal
+l1=[1,2,3,4,5]
+</code></pre>
+<pre><code class="language-python">type(l1)
+</code></pre>
+<pre><code>list
+</code></pre>
+<pre><code class="language-python">#creation of list with list() built in function
+l2=list()
+l2
+</code></pre>
+<pre><code>[]
+</code></pre>
+<pre><code class="language-python">type(l2)
+</code></pre>
+<pre><code>list
+</code></pre>
+<pre><code class="language-python">l3=list(&quot;Hello World&quot;)
+l3
+</code></pre>
+<pre><code>['H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd']
+</code></pre>
+<pre><code class="language-python"># A Tuple can be passed as an argument in list() function
+l4=list((1,2,3))
+</code></pre>
+<pre><code class="language-python">l4
+</code></pre>
+<pre><code>[1, 2, 3]
+</code></pre>
+<pre><code class="language-python">type(l4)
+</code></pre>
+<pre><code>list
+</code></pre>
+<pre><code class="language-python"> strng1=&quot;Central Water Commission is a premier Technical Organization of India in the field of Water Resources\
+and is presently functioning as an attached office of the Ministry of Jal Shakti, Department of\
+Water Resources, River Development and Ganga Rejuvenation, Government of India.&quot;
+</code></pre>
+<pre><code class="language-python">#creation of list of strings with split() function
+strng1.split()
+</code></pre>
+<pre><code>['Central',
+ 'Water',
+ 'Commission',
+ 'is',
+ 'a',
+ 'premier',
+ 'Technical',
+ 'Organization',
+ 'of',
+ 'India',
+ 'in',
+ 'the',
+ 'field',
+ 'of',
+ 'Water',
+ 'Resourcesand',
+ 'is',
+ 'presently',
+ 'functioning',
+ 'as',
+ 'an',
+ 'attached',
+ 'office',
+ 'of',
+ 'the',
+ 'Ministry',
+ 'of',
+ 'Jal',
+ 'Shakti,',
+ 'Department',
+ 'ofWater',
+ 'Resources,',
+ 'River',
+ 'Development',
+ 'and',
+ 'Ganga',
+ 'Rejuvenation,',
+ 'Government',
+ 'of',
+ 'India.']
+</code></pre>
+<pre><code class="language-python">strng2 = &quot;Pune,Nagpur,Hyderabad,Bangalore&quot;
+</code></pre>
+<pre><code class="language-python">l5= strng2.split(',')
+l5
+</code></pre>
+<pre><code>['Pune', 'Nagpur', 'Hyderabad', 'Bangalore']
+</code></pre>
+<h4 id="list-indexing-and-slicing">List indexing and slicing</h4>
+<pre><code class="language-python">l5[2]
+</code></pre>
+<pre><code>'Hyderabad'
+</code></pre>
+<pre><code class="language-python">l5[0:2]
+</code></pre>
+<pre><code>['Pune', 'Nagpur']
+</code></pre>
+<pre><code class="language-python">l6=[1,2,3,4,5,6,7,8,9,10]
+</code></pre>
+<pre><code class="language-python">l6[:]
+</code></pre>
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+</code></pre>
+<pre><code class="language-python">l6[0:]
+</code></pre>
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+</code></pre>
+<pre><code class="language-python">l6[:-1]
+</code></pre>
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+<pre><code class="language-python">l6[::2]
+</code></pre>
+<pre><code>[1, 3, 5, 7, 9]
+</code></pre>
+<pre><code class="language-python">l7=[[1,2],[3,4]] #nested list
+l7
+</code></pre>
+<pre><code>[[1, 2], [3, 4]]
+</code></pre>
+<pre><code class="language-python">l7[0]
+</code></pre>
+<pre><code>[1, 2]
+</code></pre>
+<pre><code class="language-python">l7[0][0] # Double index notation
+</code></pre>
+<pre><code>1
+</code></pre>
+<h4 id="list-mutability">List Mutability</h4>
+<pre><code class="language-python">l6
+</code></pre>
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+</code></pre>
+<pre><code class="language-python">l6[0]=0
+</code></pre>
+<pre><code class="language-python">l6
+</code></pre>
+<pre><code>[0, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+</code></pre>
+<pre><code class="language-python">l6[1:3]=[11,12]
+l6
+</code></pre>
+<pre><code>[0, 11, 12, 4, 5, 6, 7, 8, 9, 10]
+</code></pre>
+<pre><code class="language-python">l8=['a','b']
+l9=['c','d']
+</code></pre>
+<pre><code class="language-python">l8+l9
+</code></pre>
+<pre><code>['a', 'b', 'c', 'd']
+</code></pre>
+<pre><code class="language-python">l8*2
+</code></pre>
+<pre><code>['a', 'b', 'a', 'b']
+</code></pre>
+<h4 id="list-methods">List Methods</h4>
+<pre><code class="language-python">l5
+</code></pre>
+<pre><code>['Pune', 'Nagpur', 'Hyderabad', 'Bangalore']
+</code></pre>
+<pre><code class="language-python">l5.insert(0,'Chennai')
+</code></pre>
+<pre><code class="language-python">l5
+</code></pre>
+<pre><code>['Chennai', 'Pune', 'Nagpur', 'Hyderabad', 'Bangalore']
+</code></pre>
+<pre><code class="language-python">#list methods alter lists in place and return None
+l5=l5.insert(0,'Mumbai')
+</code></pre>
+<pre><code class="language-python">l5
+</code></pre>
+<pre><code class="language-python">type(l5)
+</code></pre>
+<pre><code>NoneType
+</code></pre>
+<pre><code class="language-python">l10=['A', 'B', 'C','D','E']
+</code></pre>
+<pre><code class="language-python">l10.insert(10,'F')
+</code></pre>
+<pre><code class="language-python">l10
+</code></pre>
+<pre><code>['A', 'B', 'C', 'D', 'E', 'F']
+</code></pre>
+<pre><code class="language-python">l8
+</code></pre>
+<pre><code>['a', 'b']
+</code></pre>
+<pre><code class="language-python">l8.insert(-1,'c')
+l8
+</code></pre>
+<pre><code>['a', 'c', 'b']
+</code></pre>
+<pre><code class="language-python">l9
+</code></pre>
+<pre><code>['c', 'd']
+</code></pre>
+<pre><code class="language-python">l9.append('e')
+</code></pre>
+<pre><code class="language-python">l9
+</code></pre>
+<pre><code>['c', 'd', 'e']
+</code></pre>
+<pre><code class="language-python">l9.pop()
+l9
+</code></pre>
+<pre><code>['c', 'd']
+</code></pre>
+<pre><code class="language-python">l9.pop(0)
+l9
+</code></pre>
+<pre><code>['d']
+</code></pre>
+<pre><code class="language-python">type(l9)
+</code></pre>
+<pre><code>list
+</code></pre>
+<pre><code class="language-python">l9.extend(['e',1,4.5]) #passing list as an argument to extend() function
+l9
+</code></pre>
+<pre><code>['d', 'e', 1, 4.5]
+</code></pre>
+<pre><code class="language-python">l9.extend((5,6,7)) #passing tuple as an argument to extend() function
+l9
+</code></pre>
+<pre><code>['d', 'e', 1, 4.5, 5, 6, 7]
+</code></pre>
+<pre><code class="language-python">l9.append('e')
+l9
+</code></pre>
+<pre><code>['d', 'e', 1, 4.5, 5, 6, 7, 'e']
+</code></pre>
+<pre><code class="language-python">l9.count('e')
+</code></pre>
+<pre><code>2
+</code></pre>
+<pre><code class="language-python">l9.index(1)
+</code></pre>
+<pre><code>2
+</code></pre>
+<pre><code class="language-python">l9.reverse()
+</code></pre>
+<pre><code class="language-python">l9
+</code></pre>
+<pre><code>['e', 7, 6, 5, 4.5, 1, 'e', 'd']
+</code></pre>
+<pre><code class="language-python">l11=['Mumbai', 'pune','ahmadabad','Hyderabad']
+</code></pre>
+<pre><code class="language-python">l11.sort()
+l11
+</code></pre>
+<pre><code>['Hyderabad', 'Mumbai', 'ahmadabad', 'pune']
+</code></pre>
+<pre><code class="language-python">l12=[0.5,3.9,12.7,2.3,7.0]
+
+</code></pre>
+<pre><code class="language-python">l12.sort(reverse=True)
+l12
+</code></pre>
+<pre><code>[12.7, 7.0, 3.9, 2.3, 0.5]
+</code></pre>
+<pre><code class="language-python">0.5 in l12
+</code></pre>
+<pre><code>True
+</code></pre>
+<h2 id="sets">Sets</h2>
+<pre><code class="language-python">#creation of set with set literal
+set1 = {1,2,3}
+</code></pre>
+<pre><code class="language-python">type(set1)
+</code></pre>
+<pre><code>set
+</code></pre>
+<pre><code class="language-python">list1=[1,2,3,4,5]
+list2=[3,4,5,6,7]
+</code></pre>
+<pre><code class="language-python">list1.extend(list2)
+</code></pre>
+<pre><code class="language-python">list1
+</code></pre>
+<pre><code>[1, 2, 3, 4, 5, 3, 4, 5, 6, 7]
+</code></pre>
+<pre><code class="language-python">#creation of set from a list
+set2 = set(list1)
+</code></pre>
+<pre><code class="language-python">set2
+</code></pre>
+<pre><code>{1, 2, 3, 4, 5, 6, 7}
+</code></pre>
+<pre><code class="language-python">#Index is not attached to an element of a set
+set2[0]
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+~\AppData\Local\Temp/ipykernel_9284/2138154667.py in &lt;module&gt;
+      1 #Index is not attached to an element of a set
+----&gt; 2 set2[0]
+
+
+TypeError: 'set' object is not subscriptable
+</code></pre>
+<pre><code class="language-python">#check presence of an element using in keyword
+1 in set2
+</code></pre>
+<pre><code>True
+</code></pre>
+<pre><code class="language-python">#Intersection of two sets
+set2.intersection(set1)
+</code></pre>
+<pre><code>{1, 2, 3}
+</code></pre>
+<pre><code class="language-python">#union of two sets
+set2.union(set1)
+</code></pre>
+<pre><code>{1, 2, 3, 4, 5, 6, 7}
+</code></pre>
+<h2 id="dictionary">Dictionary</h2>
+<pre><code class="language-python">#creation of dictionary using dict() buil in function
+dictionary1=dict()
+</code></pre>
+<pre><code class="language-python">dictionary1
+</code></pre>
+<pre><code>{}
+</code></pre>
+<pre><code class="language-python">type(dictionary1)
+</code></pre>
+<pre><code>dict
+</code></pre>
+<pre><code class="language-python">#creation of dictionary with dictionary literal
+car_details = {'name' : 'Fiat', 'color': 'Blue', 'engineSize': 1000, 'Dimensions':[4.5,2,1.5]}
+</code></pre>
+<pre><code class="language-python">type(car_details)
+</code></pre>
+<pre><code>dict
+</code></pre>
+<pre><code class="language-python">#accessing value associated with any key in the dictionary
+car_details['color']
+</code></pre>
+<pre><code>'Blue'
+</code></pre>
+<pre><code class="language-python">#dictionaries are mutable
+car_details['year of manufacture']=2015
+</code></pre>
+<pre><code class="language-python">car_details
+</code></pre>
+<pre><code>{'name': 'Fiat',
+ 'color': 'Blue',
+ 'engineSize': 1000,
+ 'Dimensions': [4.5, 2, 1.5],
+ 'year of manufacture': 2015}
+</code></pre>
+<pre><code class="language-python">car_details['color'] = 'Grey'
+</code></pre>
+<pre><code class="language-python">car_details
+</code></pre>
+<pre><code>{'name': 'Fiat',
+ 'color': 'Grey',
+ 'engineSize': 1000,
+ 'Dimensions': [4.5, 2, 1.5],
+ 'year of manufacture': 2015}
+</code></pre>
+<pre><code class="language-python">Annual_rainfall_Cities = (('Delhi',800), ('Pune',850),('Mumbai',2400), ('Jodhpur',350))
+</code></pre>
+<pre><code class="language-python">#creation of dictionary from a Tuple of Tuples
+Rainfall_of_Cities = dict(Annual_rainfall_Cities)
+</code></pre>
+<pre><code class="language-python">type(Rainfall_of_Cities)
+
+</code></pre>
+<pre><code>dict
+</code></pre>
+<pre><code class="language-python">Rainfall_of_Cities
+</code></pre>
+<pre><code>{'Delhi': 800, 'Pune': 850, 'Mumbai': 2400, 'Jodhpur': 350}
+</code></pre>
+<pre><code class="language-python">#deletion of any key:value pair from dictionary
+del car_details['year of manufacture']
+</code></pre>
+<pre><code class="language-python">car_details
+</code></pre>
+<pre><code>{'name': 'Fiat',
+ 'color': 'Grey',
+ 'engineSize': 1000,
+ 'Dimensions': [4.5, 2, 1.5]}
+</code></pre>
+<pre><code class="language-python">#check presence of any key in a dictionary using in keyword.It is not possible to check value
+'Delhi' in Rainfall_of_Cities
+</code></pre>
+<pre><code>True
+</code></pre>
+<pre><code class="language-python">'Hyderabad' in Rainfall_of_Cities
+</code></pre>
+<pre><code>False
+</code></pre>
+<pre><code class="language-python">#dictionary method items() creates a new data type of dict_item
+Rainfall_of_Cities.items()
+</code></pre>
+<pre><code>dict_items([('Delhi', 800), ('Pune', 850), ('Mumbai', 2400), ('Jodhpur', 350)])
+</code></pre>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XtHkTYjH27U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h2 id="lecture-slides">Lecture Slides</h2>
+<p><a href="../pdfs/Session3_Data%20Structures%20in%20Python.pdf">Download Session3_Data Structures in Python.pdf</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

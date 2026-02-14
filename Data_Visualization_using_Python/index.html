@@ -1,0 +1,1126 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../11_Time_Series_Analysis_Part_II/">
+      
+      
+        <link rel="next" href="../Geospatial_Analysis_Working_with_Raster_Data/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Data Visualization using Python - GeoPython Tutorial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exercise-on-matplotlib" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GeoPython Tutorial" class="md-header__button md-logo" aria-label="GeoPython Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoPython Tutorial
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Visualization using Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GeoPython Tutorial" class="md-nav__button md-logo" aria-label="GeoPython Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GeoPython Tutorial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_Basic_Data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Basic Data types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_Data_Structures_in_Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Data Structures in Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_Functions_Loops_Controlflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 Functions Loops Controlflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_OOP_Error_and_File_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 OOP Error and File handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_Working_with_Pandas_Part_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 Working with Pandas Part I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_Working_with_Pandas_Part_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 Working with Pandas Part II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 Geospatial Analysis Vector Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_Working_with_Numpy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 Working with Numpy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_Time_Series_Analysis_Part_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Time Series Analysis Part I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_Time_Series_Analysis_Part_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Time Series Analysis Part II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization using Python
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization using Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Geospatial_Analysis_Working_with_Raster_Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geospatial Analysis Working with Raster Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NWA_Cloud_based_Geospatial_data_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NWA Cloud based Geospatial data processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenWeatherMapAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWeatherMapAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Open_Meteo_WEB_API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Meteo WEB API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prediction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web_Scraping_web_Table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Scraping web Table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="exercise-on-matplotlib">Exercise on matplotlib</h1>
+<p>Let us start with some simple plots</p>
+<pre><code class="language-python"># import the required modules
+
+# preamble
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.io
+import datetime
+</code></pre>
+<pre><code class="language-python"># let us construct a sine curve
+x = np.linspace(0, 2*np.pi, 50)
+plt.plot(x, np.sin(x))
+</code></pre>
+<pre><code class="language-python"># decorations
+
+x = np.linspace(0, 2*np.pi, 50)
+plt.plot(x, np.sin(x), label='sin(x)')
+
+# let us add the axis labels
+plt.xlabel('x')
+plt.ylabel('sin(x)')
+
+# let us add the plot title
+plt.title('Sine of X')
+
+# let us add the legend 
+plt.legend()
+plt.show()
+</code></pre>
+<pre><code class="language-python"># double frequency plot
+
+x = np.linspace(0, 2*np.pi, 50)
+plt.plot(x, np.sin(2*x), label='sin(2x)')
+
+# let us add the axis labels
+plt.xlabel('x')
+plt.ylabel('sin(2x)')
+
+# let us add the plot title
+plt.title('Sinusoids')
+
+# let us add the legend 
+plt.legend()
+
+plt.show()
+</code></pre>
+<h2 id="exercise">Exercise</h2>
+<p>Modify the code above to plot the cosine of X</p>
+<pre><code class="language-python">
+</code></pre>
+<pre><code class="language-python"># setting color of the line
+y = np.linspace(0, 2*np.pi, 50)
+plt.plot(y, np.cos(y), 'r')
+</code></pre>
+<pre><code class="language-python"># setting color and width of the line
+y = np.linspace(0, 2*np.pi, 50)
+plt.plot(y, np.sin(y), 'g', linewidth=5)
+</code></pre>
+<h2 id="exercise_1">Exercise</h2>
+<p>Replace 'g' by 'g.', 'go', 'g+' to see their effects</p>
+<pre><code class="language-python">
+</code></pre>
+<pre><code class="language-python"># printing text on the plot and saving the plot as a file
+y = np.linspace(0, 2*np.pi, 50)
+plt.plot(y, np.sin(y), 'g', linewidth=5)
+plt.annotate('local max', xy=(1.5, 1))
+plt.savefig('sin.png')
+</code></pre>
+<pre><code class="language-python"># overlaid plots 
+# by default, 2 plot statements, will lead to over-plotting
+y = np.linspace(0, 2*np.pi, 50)
+plt.plot(y, np.sin(y), label='sin(y)')
+plt.plot(y, np.cos(y), label='cos(y)')
+plt.xlabel('y')
+plt.ylabel('f(y)')
+plt.legend()
+
+# setting axes limits
+plt.xlim(0, 2*np.pi)
+plt.ylim(-1, 1)
+</code></pre>
+<h2 id="exercise_2">Exercise</h2>
+<p>Review all the statements above and try to plot the plot given below:</p>
+<p><img src="data/exercise3.png" alt="exercise image" width="500"/></p>
+<pre><code class="language-python">
+</code></pre>
+<pre><code class="language-python"># let us see some more interesting graphs
+t = np.arange(0.0, 5.0, 0.2)
+plt.plot(t, t**2,'x') # t2
+plt.plot(t, t**3,'ro') # t3
+</code></pre>
+<pre><code class="language-python"># subplots and effect of different marker symbols
+mark = ['x','o','^','+','&gt;']
+plt.figure(figsize=(12,8))
+NR = 2 # number of rows
+NC = 3 # number of columns
+pn = 1
+for row in range(NR):
+    for col in range(NC):
+        plt.subplot(NR, NC, pn)
+        a = np.random.rand(10) * pn
+        plt.plot(a, marker = mark[(pn+1)%5])
+        plt.xlabel('plot {}X'.format(pn))
+        plt.ylabel('plot {}Y'.format(pn))
+        pn = pn + 1
+</code></pre>
+<pre><code class="language-python"># pie chart
+labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
+fracs = [25, 25, 30, 20]
+plt.pie(fracs, labels=labels)
+</code></pre>
+<pre><code class="language-python"># polar plot
+k = 12
+th = np.linspace(0, 10*np.pi,1000)
+r = np.cos(k*th)
+plt.polar(th,r)
+</code></pre>
+<pre><code class="language-python"># fractal diagram
+X = 200
+Y = 200
+MAXIT = 100
+MAXABS = 2.0
+c = 0.02 - 0.8j # The constant in equation z**2 + c
+m = np.zeros([X,Y]) # A two dimensional array
+
+def numit(x,y): # number of iterations to diverge
+    z = complex(x,y)
+    for k in range(MAXIT):
+        if abs(z) &lt;= MAXABS:
+            z = z**2 + c
+        else:
+            return k # diverged after k trials
+    return MAXIT # did not diverge,
+
+for x in range(X):
+    for y in range(Y):
+        re = 0.01 * x - 1.0 # complex number for
+        im = 0.01 * y - 1.0 # this (x,y) coordinate
+        m[x][y] = numit(re,im) # get the color for (x,y)
+
+plt.imshow(m) # Colored plot using the 2D matrix
+</code></pre>
+<pre><code class="language-python"># 3D plot
+from mpl_toolkits.mplot3d import Axes3D
+
+# Create a figure and a 3D subplot
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Generate some sample 3D data
+x = np.linspace(-5, 5, 100)
+y = np.linspace(-5, 5, 100)
+X, Y = np.meshgrid(x, y)
+Z = np.sin(np.sqrt(X**2 + Y**2))
+
+# Plot the surface
+ax.plot_surface(X, Y, Z, cmap='viridis')
+
+# Set labels
+ax.set_xlabel('X-axis')
+ax.set_ylabel('Y-axis')
+ax.set_zlabel('Z-axis')
+
+# Display the plot
+plt.show()
+</code></pre>
+<h1 id="some-real-world-examples">Some real world examples</h1>
+<p>First let us see how we can <strong>plot rainfall and runoff  data</strong></p>
+<p>Daily precipitation and discharge over the period of 2005 to 2014 (3653 days), from gauging stations near University of Illinois, USA. There are 2 variables of interest, 'q' which is runoff (units in cfs), and 'r' which is rainfall (units in inches).</p>
+<p>Source: https://serc.carleton.edu/hydromodules/steps/153828.html</p>
+<pre><code class="language-python">f = scipy.io.loadmat('data/sample_rainfall-runoff_data.mat')
+f.keys()
+</code></pre>
+<pre><code class="language-python"># discharge data 
+f['q'].shape
+</code></pre>
+<pre><code class="language-python">base = datetime.datetime(2005,1,1)
+date_list = [base + datetime.timedelta(days=x) for x in range(3653)]
+print('{} days, starting from {} till {}'.format(len(date_list), date_list[0], date_list[-2]))
+</code></pre>
+<pre><code class="language-python"># There are 2 variables of interest, 'q' which is runoff (units cfs), and 'r' which is rainfall (units inches)
+
+plt.figure(figsize=(12,5))
+plt.subplot(1, 2, 1)
+plt.plot(date_list, f['r'])
+plt.subplot(1, 2, 2)
+plt.plot(date_list, f['q'])
+</code></pre>
+<pre><code class="language-python"># making publication quality graphs
+fig, ax1 = plt.subplots(figsize=(12,5))
+
+ax2 = ax1.twinx()
+ax1.plot(date_list, f['r'], 'g-')
+ax2.plot(date_list, f['q'], 'b-')
+ax2.invert_yaxis()
+
+ax1.set_xlabel('Year')
+ax1.set_ylabel('Daily precipitation (inch)', color='g')
+ax2.set_ylabel('Discharge (cfs)', color='b')
+</code></pre>
+<h2 id="exercise_3">Exercise</h2>
+<p>Can you programmatically zoom in to inspect individual storm event? Try and examine the rising and falling limbs of the hydrograph. </p>
+<pre><code class="language-python">
+</code></pre>
+<p>Next let us make a <strong>basic contour plot</strong></p>
+<p>Read in the monthly mean surface/near-surface air temperature from the NCEP/NCAR Reanalysis 1 netCDF dataset provided. Also read in the latitude and longitude vectors from the dataset. Extract a single timeslice of the temperature and plot a contour map. </p>
+<p>Source: "A Hands-On Introduction to Using Python in the Atmospheric and Oceanic Sciences," by Johnny Wei-Bing Lin (2012). https://github.com/jwblin/course_files</p>
+<pre><code class="language-python">fileobj = scipy.io.netcdf_file('data/air.mon.mean.nc', 'r')
+T_time0 = np.array(fileobj.variables['air'][0,:,:])
+T_units = fileobj.variables['air'].units.decode('UTF-8')
+lon = np.array(fileobj.variables['lon'][:])
+lon_units = fileobj.variables['lon'].units.decode('UTF-8')
+lat = np.array(fileobj.variables['lat'][:])
+lat_units = fileobj.variables['lat'].units.decode('UTF-8')
+fileobj.close()
+</code></pre>
+<pre><code class="language-python">#- Make 2-D longitude and latitude arrays:
+[lonall, latall] = np.meshgrid(lon, lat)
+
+#- Make a contour plot of the temperature:
+plt.figure(figsize=(12,8))
+mymapf = plt.contourf(lonall, latall, T_time0, 10, cmap=plt.cm.Reds)
+mymap = plt.contour(lonall, latall, T_time0, 10, colors='k')
+plt.clabel(mymap, fontsize=12)
+plt.axis([0, 360, -90, 90])
+plt.xlabel('Longitude [{}]'.format(lon_units))
+plt.ylabel('Latitude [{}]'.format(lat_units))
+cbar = plt.colorbar(mymapf, orientation='horizontal')
+cbar.set_label('Temperature in {}'.format(T_units))
+</code></pre>
+<p>Notebook created by Prasun Kumar Gupta, Geoinformatics Department, Indian Institute of Remote Sensing (ISRO), Dehradun. Contact: prasun@iirs.gov.in</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qXsdgTGwqZ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h2 id="lecture-slides">Lecture Slides</h2>
+<p><a href="../pdfs/Data%20viz%20using%20Python-slides.pdf">Download Data viz using Python-slides.pdf</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

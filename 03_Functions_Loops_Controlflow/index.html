@@ -1,0 +1,1345 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../02_Data_Structures_in_Python/">
+      
+      
+        <link rel="next" href="../04_OOP_Error_and_File_handling/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>03 Functions Loops Controlflow - GeoPython Tutorial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#functions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GeoPython Tutorial" class="md-header__button md-logo" aria-label="GeoPython Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoPython Tutorial
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              03 Functions Loops Controlflow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GeoPython Tutorial" class="md-nav__button md-logo" aria-label="GeoPython Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GeoPython Tutorial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_Basic_Data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Basic Data types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_Data_Structures_in_Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Data Structures in Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 Functions Loops Controlflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_OOP_Error_and_File_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 OOP Error and File handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_Working_with_Pandas_Part_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 Working with Pandas Part I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_Working_with_Pandas_Part_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 Working with Pandas Part II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_Geospatial_Analysis_Vector_Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 Geospatial Analysis Vector Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_Working_with_Numpy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 Working with Numpy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_Time_Series_Analysis_Part_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Time Series Analysis Part I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_Time_Series_Analysis_Part_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Time Series Analysis Part II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Visualization_using_Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization using Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Geospatial_Analysis_Working_with_Raster_Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geospatial Analysis Working with Raster Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NWA_Cloud_based_Geospatial_data_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NWA Cloud based Geospatial data processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenWeatherMapAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWeatherMapAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Open_Meteo_WEB_API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Meteo WEB API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prediction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web_Scraping_web_Table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Scraping web Table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="functions">Functions</h1>
+<pre><code class="language-python">#User defined function
+def sum_of_integers(x,y):
+    return x+y
+</code></pre>
+<pre><code class="language-python">#Calling of the user defined by passing arguments into the parenthesis
+sum_of_integers(2,3)
+</code></pre>
+<pre><code>5
+</code></pre>
+<pre><code class="language-python">z = sum_of_integers(3,4)
+z
+</code></pre>
+<pre><code>7
+</code></pre>
+<pre><code class="language-python">#passing of arguments less or greater than the number of parameters into a function 
+sum_of_integers(2,3,4)
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+~\AppData\Local\Temp/ipykernel_7880/2773305214.py in &lt;module&gt;
+      1 #passing of arguments less or greater than the number of parameters into a function
+----&gt; 2 sum_of_integers(2,3,4)
+
+
+TypeError: sum_of_integers() takes 2 positional arguments but 3 were given
+</code></pre>
+<pre><code class="language-python">#Arbritrary Arguments(*args)
+#Used when it is not known in advance how many arguments will be passed in to the function
+
+def func1 (*args):
+    return(args)
+</code></pre>
+<pre><code class="language-python">#arbritary postional arguments are collected as a tuple
+func1(1,2,3,4,'a','b')
+</code></pre>
+<pre><code>(1, 2, 3, 4, 'a', 'b')
+</code></pre>
+<pre><code class="language-python">def welcome_participant(first_name,last_name):
+    full_name = first_name+' '+last_name
+    print(f&quot;Hello '{full_name}', How do you do?&quot;)
+</code></pre>
+<pre><code class="language-python">#positional arguments has to follow the order of parameters
+#keyword arguments can be passed in any order
+welcome_participant(last_name = 'Kumar', first_name = 'Ashok')
+</code></pre>
+<pre><code>Hello 'Ashok Kumar', How do you do?
+</code></pre>
+<pre><code class="language-python"># Arbitrary keyword arguments
+def func2(**kwargs):
+    return (kwargs)
+</code></pre>
+<pre><code class="language-python"># Arbitrary keyword arguments are collected as a dictionary
+func2(x=2,y=3,z=5)
+</code></pre>
+<pre><code>{'x': 2, 'y': 3, 'z': 5}
+</code></pre>
+<pre><code class="language-python">list1=[67,12,89,32,97,9]
+</code></pre>
+<pre><code class="language-python">list1.sort()
+list1
+</code></pre>
+<pre><code>[9, 12, 32, 67, 89, 97]
+</code></pre>
+<pre><code class="language-python">help(list1.sort)
+</code></pre>
+<pre><code>Help on built-in function sort:
+
+sort(*, key=None, reverse=False) method of builtins.list instance
+    Sort the list in ascending order and return None.
+
+    The sort is in-place (i.e. the list itself is modified) and stable (i.e. the
+    order of two equal elements is maintained).
+
+    If a key function is given, apply it once to each list item and sort them,
+    ascending or descending, according to their function values.
+
+    The reverse flag can be set to sort in descending order.
+</code></pre>
+<pre><code class="language-python">#overwriting the default parameter of the list method sort()
+list1.sort(reverse=True)
+</code></pre>
+<pre><code class="language-python">list1 #in descending order
+</code></pre>
+<pre><code>[97, 89, 67, 32, 12, 9]
+</code></pre>
+<pre><code class="language-python">#lambda functions have a format lambda parameter1, parameter2... : expression
+#lambda functions act as anonymous functions(undefined) 
+#lambda function can be passed as an argument to any function
+c = lambda a,b : a+b
+c(1,2)
+</code></pre>
+<pre><code>3
+</code></pre>
+<pre><code class="language-python">#error in trying to call a function from math module
+sqrt(16)
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+~\AppData\Local\Temp/ipykernel_7880/2843140530.py in &lt;module&gt;
+      1 #error in trying to call a function from math module
+----&gt; 2 sqrt(16)
+
+
+NameError: name 'sqrt' is not defined
+</code></pre>
+<pre><code class="language-python">import math
+math.sqrt(16)
+</code></pre>
+<pre><code>4.0
+</code></pre>
+<pre><code class="language-python">math.sin(1)
+</code></pre>
+<pre><code>0.8414709848078965
+</code></pre>
+<pre><code class="language-python">#A constant defined in math module
+math.pi
+</code></pre>
+<pre><code>3.141592653589793
+</code></pre>
+<pre><code class="language-python">print(dir(math))
+</code></pre>
+<pre><code>['__doc__', '__loader__', '__name__', '__package__', '__spec__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'comb', 'copysign', 'cos', 'cosh', 'degrees', 'dist', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'isqrt', 'lcm', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 'nextafter', 'perm', 'pi', 'pow', 'prod', 'radians', 'remainder', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc', 'ulp']
+</code></pre>
+<pre><code class="language-python">#scope of variables
+x = 5.0
+
+def doubling_of_number(a):
+    x=2.0
+    print(f&quot;Inside the function, value of x is {x}&quot;)
+    return a*x
+
+doubling_of_number(3)
+print(f&quot;Outside the function, value of x is {x}&quot;)
+</code></pre>
+<pre><code>Inside the function, value of x is 2.0
+Outside the function, value of x is 5.0
+</code></pre>
+<pre><code class="language-python">x = 5.0
+
+def doubling_of_number(a):
+    print(f&quot;Inside the function, value of x is {x}&quot;)
+    return a*x
+
+doubling_of_number(3)
+print(f&quot;Outside the function, value of x is {x}&quot;)
+</code></pre>
+<pre><code>Inside the function, value of x is 5.0
+Outside the function, value of x is 5.0
+</code></pre>
+<pre><code class="language-python">help(len)
+</code></pre>
+<pre><code>Help on built-in function len in module builtins:
+
+len(obj, /)
+    Return the number of items in a container.
+</code></pre>
+<pre><code class="language-python"># Including a docstring inside a user defined function
+def product(a,b):
+    '''
+    Return the product of two numbers which are either integers or floats
+    '''
+    return a*b
+</code></pre>
+<pre><code class="language-python">help(product)
+</code></pre>
+<pre><code>Help on function product in module __main__:
+
+product(a, b)
+    Return the product of two numbers which are either integers or floats
+</code></pre>
+<h1 id="loops">Loops</h1>
+<h4 id="while-loops">while loops</h4>
+<pre><code class="language-python">i = 0
+
+while i &lt;=5 :
+    print(i)
+    i += 1 # same as i=i+1
+</code></pre>
+<pre><code>0
+1
+2
+3
+4
+5
+</code></pre>
+<h4 id="for-loops">For loops</h4>
+<pre><code class="language-python">#iterating over a list of elements
+for i in [1,2,3,4,5]:
+    print(i)
+</code></pre>
+<pre><code>1
+2
+3
+4
+5
+</code></pre>
+<pre><code class="language-python">#iterating over a tuple
+for i in ('a','b','c','d','e'):
+    print(i)
+</code></pre>
+<pre><code>a
+b
+c
+d
+e
+</code></pre>
+<pre><code class="language-python">#iterating over a string
+for i in 'Hello World':
+    print(i)
+</code></pre>
+<pre><code>H
+e
+l
+l
+o
+
+W
+o
+r
+l
+d
+</code></pre>
+<pre><code class="language-python">help(enumerate)
+</code></pre>
+<pre><code>Help on class enumerate in module builtins:
+
+class enumerate(object)
+ |  enumerate(iterable, start=0)
+ |  
+ |  Return an enumerate object.
+ |  
+ |    iterable
+ |      an object supporting iteration
+ |  
+ |  The enumerate object yields pairs containing a count (from start, which
+ |  defaults to zero) and a value yielded by the iterable argument.
+ |  
+ |  enumerate is useful for obtaining an indexed list:
+ |      (0, seq[0]), (1, seq[1]), (2, seq[2]), ...
+ |  
+ |  Methods defined here:
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __next__(self, /)
+ |      Implement next(self).
+ |  
+ |  __reduce__(...)
+ |      Return state information for pickling.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Class methods defined here:
+ |  
+ |  __class_getitem__(...) from builtins.type
+ |      See PEP 585
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+</code></pre>
+<pre><code class="language-python">index_value = enumerate([1,2,3,4,5])
+</code></pre>
+<pre><code class="language-python">#iterating over enumerate object
+for index, value in enumerate([1,2,3,4,5]):
+    print(index, value)
+</code></pre>
+<pre><code>0 1
+1 2
+2 3
+3 4
+4 5
+</code></pre>
+<pre><code class="language-python">help(range)
+</code></pre>
+<pre><code>Help on class range in module builtins:
+
+class range(object)
+ |  range(stop) -&gt; range object
+ |  range(start, stop[, step]) -&gt; range object
+ |  
+ |  Return an object that produces a sequence of integers from start (inclusive)
+ |  to stop (exclusive) by step.  range(i, j) produces i, i+1, i+2, ..., j-1.
+ |  start defaults to 0, and stop is omitted!  range(4) produces 0, 1, 2, 3.
+ |  These are exactly the valid indices for a list of 4 elements.
+ |  When step is given, it specifies the increment (or decrement).
+ |  
+ |  Methods defined here:
+ |  
+ |  __bool__(self, /)
+ |      self != 0
+ |  
+ |  __contains__(self, key, /)
+ |      Return key in self.
+ |  
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |  
+ |  __ge__(self, value, /)
+ |      Return self&gt;=value.
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __getitem__(self, key, /)
+ |      Return self[key].
+ |  
+ |  __gt__(self, value, /)
+ |      Return self&gt;value.
+ |  
+ |  __hash__(self, /)
+ |      Return hash(self).
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __le__(self, value, /)
+ |      Return self&lt;=value.
+ |  
+ |  __len__(self, /)
+ |      Return len(self).
+ |  
+ |  __lt__(self, value, /)
+ |      Return self&lt;value.
+ |  
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |  
+ |  __reduce__(...)
+ |      Helper for pickle.
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __reversed__(...)
+ |      Return a reverse iterator.
+ |  
+ |  count(...)
+ |      rangeobject.count(value) -&gt; integer -- return number of occurrences of value
+ |  
+ |  index(...)
+ |      rangeobject.index(value) -&gt; integer -- return index of value.
+ |      Raise ValueError if the value is not present.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  start
+ |  
+ |  step
+ |  
+ |  stop
+</code></pre>
+<pre><code class="language-python">#iterating over a range object
+for j in range(5):
+    print(j)
+</code></pre>
+<pre><code>0
+1
+2
+3
+4
+</code></pre>
+<pre><code class="language-python">#Overwriting the default argument for start in range() function
+for k in range(1,5):
+    print(k)
+</code></pre>
+<pre><code>1
+2
+3
+4
+</code></pre>
+<h1 id="conditional-logic-and-control-flow">Conditional Logic and Control Flow</h1>
+<pre><code class="language-python">type(False)
+</code></pre>
+<pre><code>bool
+</code></pre>
+<pre><code class="language-python">not True
+</code></pre>
+<pre><code>False
+</code></pre>
+<pre><code class="language-python">#comparison of strings 
+'abc' &lt; 'cde'
+</code></pre>
+<pre><code>True
+</code></pre>
+<pre><code class="language-python">'a' == &quot;A&quot;
+</code></pre>
+<pre><code>False
+</code></pre>
+<pre><code class="language-python">'a' != 'A'
+</code></pre>
+<pre><code>True
+</code></pre>
+<pre><code class="language-python">#logical operators are used to compound boolean expressions
+(3&lt;5)and(5&lt;7)
+</code></pre>
+<pre><code>True
+</code></pre>
+<pre><code class="language-python">#nested if statement
+x = 7
+
+if x&gt;0 :
+    if x%2 == 0:
+        print(f&quot;{x} is even&quot;)
+    else:
+        print(f&quot;{x} is odd&quot;)
+</code></pre>
+<pre><code>7 is odd
+</code></pre>
+<pre><code class="language-python">#combination of for loop and if-else statements
+for i in range(100):
+    if i&gt;0 :
+        if i%2 == 0:
+            print(f&quot;{i} is even&quot;)
+        else:
+            print(f&quot;{i} is odd&quot;)
+</code></pre>
+<pre><code>1 is odd
+2 is even
+3 is odd
+4 is even
+5 is odd
+6 is even
+7 is odd
+8 is even
+9 is odd
+10 is even
+11 is odd
+12 is even
+13 is odd
+14 is even
+15 is odd
+16 is even
+17 is odd
+18 is even
+19 is odd
+20 is even
+21 is odd
+22 is even
+23 is odd
+24 is even
+25 is odd
+26 is even
+27 is odd
+28 is even
+29 is odd
+30 is even
+31 is odd
+32 is even
+33 is odd
+34 is even
+35 is odd
+36 is even
+37 is odd
+38 is even
+39 is odd
+40 is even
+41 is odd
+42 is even
+43 is odd
+44 is even
+45 is odd
+46 is even
+47 is odd
+48 is even
+49 is odd
+50 is even
+51 is odd
+52 is even
+53 is odd
+54 is even
+55 is odd
+56 is even
+57 is odd
+58 is even
+59 is odd
+60 is even
+61 is odd
+62 is even
+63 is odd
+64 is even
+65 is odd
+66 is even
+67 is odd
+68 is even
+69 is odd
+70 is even
+71 is odd
+72 is even
+73 is odd
+74 is even
+75 is odd
+76 is even
+77 is odd
+78 is even
+79 is odd
+80 is even
+81 is odd
+82 is even
+83 is odd
+84 is even
+85 is odd
+86 is even
+87 is odd
+88 is even
+89 is odd
+90 is even
+91 is odd
+92 is even
+93 is odd
+94 is even
+95 is odd
+96 is even
+97 is odd
+98 is even
+99 is odd
+</code></pre>
+<pre><code class="language-python">elevation_of_cities = (('Pune',560),('Delhi',200), ('Kolkata',10), ('Mumbai',15),('Darjeeling',2000))
+</code></pre>
+<pre><code class="language-python">type(elevation_of_cities)
+</code></pre>
+<pre><code>tuple
+</code></pre>
+<pre><code class="language-python">elevation_cities_dictionary = dict(elevation_of_cities)
+elevation_cities_dictionary
+</code></pre>
+<pre><code>{'Pune': 560, 'Delhi': 200, 'Kolkata': 10, 'Mumbai': 15, 'Darjeeling': 2000}
+</code></pre>
+<pre><code class="language-python">#iterating over keys of a dictionary and combination with if-elif-else statements
+for city in elevation_cities_dictionary:
+    if elevation_cities_dictionary[city] &gt; 1000:
+        print(f&quot;{city} is located at higher elevation&quot;)
+    elif 1000 &gt; elevation_cities_dictionary[city] &gt; 100:
+        print(f&quot;{city} is located at moderate elevation&quot;)
+    else:
+        print(f&quot;{city} is located at lower elevation&quot;)
+</code></pre>
+<pre><code>Pune is located at moderate elevation
+Delhi is located at moderate elevation
+Kolkata is located at lower elevation
+Mumbai is located at lower elevation
+Darjeeling is located at higher elevation
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_fbx9BH7qHQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h2 id="lecture-slides">Lecture Slides</h2>
+<p><a href="../pdfs/Session4_Functions_Loops_Conditionals_Control%20Flow_in_%20Python.pdf">Download Session4_Functions_Loops_Conditionals_Control Flow_in_ Python.pdf</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
