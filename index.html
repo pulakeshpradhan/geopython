@@ -1223,8 +1223,9 @@
   <p>Unlock the power of pixel-based data (Satellite imagery, DEMs).</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rasterio.plot</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
 <span class="n">src</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;image.tif&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">meta</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
 </code></pre></div>
 
 </div>
