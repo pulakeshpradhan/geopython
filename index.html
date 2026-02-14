@@ -1206,11 +1206,12 @@
   <h3>Vector Analysis</h3>
   <p><strong>GeoPandas</strong></p>
   <p>Master the manipulation of geometric data (Points, Lines, Polygons).</p>
-  <div style="text-align: left; width: 100%; margin-top: 10px;">
-  <pre><code class="language-python">import geopandas as gpd
-gdf = gpd.read_file("map.shp")
-gdf.plot()</code></pre>
-  </div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;map.shp&quot;</span><span class="p">)</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</code></pre></div>
+
 </div>
 
 <div class="card">
@@ -1220,11 +1221,12 @@ gdf.plot()</code></pre>
   <h3>Raster Processing</h3>
   <p><strong>Rasterio & Xarray</strong></p>
   <p>Unlock the power of pixel-based data (Satellite imagery, DEMs).</p>
-  <div style="text-align: left; width: 100%; margin-top: 10px;">
-  <pre><code class="language-python">import rasterio
-src = rasterio.open("image.tif")
-print(src.meta)</code></pre>
-  </div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>
+<span class="n">src</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;image.tif&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">meta</span><span class="p">)</span>
+</code></pre></div>
+
 </div>
 
 <div class="card">
@@ -1234,11 +1236,12 @@ print(src.meta)</code></pre>
   <h3>Time Series</h3>
   <p><strong>Advanced Pandas</strong></p>
   <p>Handle temporal data with precision for meteorological trends.</p>
-  <div style="text-align: left; width: 100%; margin-top: 10px;">
-  <pre><code class="language-python">df['date'] = pd.to_datetime(df['date'])
-df.set_index('date', inplace=True)
-df.resample('M').mean()</code></pre>
-  </div>
+
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div>
+
 </div>
 
 <div class="card">
@@ -1248,11 +1251,12 @@ df.resample('M').mean()</code></pre>
   <h3>Web APIs & Cloud</h3>
   <p><strong>Jupyter & APIs</strong></p>
   <p>Connect to live APIs like OpenWeatherMap.</p>
-  <div style="text-align: left; width: 100%; margin-top: 10px;">
-  <pre><code class="language-python">import requests
-res = requests.get(api_url)
-data = res.json()</code></pre>
-  </div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">api_url</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div>
+
 </div>
 
 </div>
